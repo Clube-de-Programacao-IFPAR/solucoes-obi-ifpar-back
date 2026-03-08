@@ -1,0 +1,2684 @@
+{
+  "2000": {
+    "1": {
+      "2": {
+        "bit": [
+          "/static/extras/obi2000/gabaritos/2000f1p2_bit.zip",
+          true
+        ],
+        "macaco": [
+          "/static/extras/obi2000/gabaritos/2000f1p2_macaco.zip",
+          true
+        ],
+        "querm": [
+          "/static/extras/obi2000/gabaritos/2000f1p2_querm.zip",
+          true
+        ],
+        "rede": [
+          "/static/extras/obi2000/gabaritos/2000f1p2_rede.zip",
+          true
+        ],
+        "saldo": [
+          "/static/extras/obi2000/gabaritos/2000f1p2_saldo.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2001": {
+    "1": {
+      "2": {
+        "calcula": [
+          "/static/extras/obi2001/gabaritos/2001f1p2_calcula.zip",
+          true
+        ],
+        "dengue": [
+          "/static/extras/obi2001/gabaritos/2001f1p2_dengue.zip",
+          true
+        ],
+        "domino": [
+          "/static/extras/obi2001/gabaritos/2001f1p2_domino.zip",
+          true
+        ],
+        "meteoro": [
+          "/static/extras/obi2001/gabaritos/2001f1p2_meteoro.zip",
+          true
+        ],
+        "sorvete": [
+          "/static/extras/obi2001/gabaritos/2001f1p2_sorvete.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2002": {
+    "1": {
+      "2": {
+        "aero": [
+          "/static/extras/obi2002/gabaritos/2002f1p2_aero.zip",
+          true
+        ],
+        "dobra": [
+          "/static/extras/obi2002/gabaritos/2002f1p2_dobra.zip",
+          true
+        ],
+        "lua": [
+          "/static/extras/obi2002/gabaritos/2002f1p2_lua.zip",
+          true
+        ],
+        "pedagio": [
+          "/static/extras/obi2002/gabaritos/2002f1p2_pedagio.zip",
+          true
+        ],
+        "tesouro": [
+          "/static/extras/obi2002/gabaritos/2002f1p2_tesouro.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2003": {
+    "0": {
+      "0": {
+        "cofre": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_cofre.zip",
+          true
+        ],
+        "erdos": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_erdos.zip",
+          true
+        ],
+        "estagio": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_estagio.zip",
+          true
+        ],
+        "hanoi": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_hanoi.zip",
+          true
+        ],
+        "super": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_super.zip",
+          true
+        ],
+        "tetris": [
+          "/static/extras/obi2003/gabaritos/2003f0p0_tetris.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2004": {
+    "0": {
+      "0": {
+        "furos": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_furos.zip",
+          true
+        ],
+        "orkut": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_orkut.zip",
+          true
+        ],
+        "pal": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_pal.zip",
+          true
+        ],
+        "par": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_par.zip",
+          true
+        ],
+        "senha": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_senha.zip",
+          true
+        ],
+        "tv": [
+          "/static/extras/obi2004/gabaritos/2004f0p0_tv.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2005": {
+    "0": {
+      "1": {
+        "duende": [
+          "/static/extras/obi2005/gabaritos/2005f0p1_duende.zip",
+          true
+        ],
+        "minhoca": [
+          "/static/extras/obi2005/gabaritos/2005f0p1_minhoca.zip",
+          true
+        ],
+        "taxi": [
+          "/static/extras/obi2005/gabaritos/2005f0p1_taxi.zip",
+          true
+        ],
+        "trilhas": [
+          "/static/extras/obi2005/gabaritos/2005f0p1_trilhas.zip",
+          true
+        ]
+      },
+      "2": {
+        "bafo": [
+          "/static/extras/obi2005/gabaritos/2005f0p2_bafo.zip",
+          true
+        ],
+        "desculpa": [
+          "/static/extras/obi2005/gabaritos/2005f0p2_desculpa.zip",
+          true
+        ],
+        "energia": [
+          "/static/extras/obi2005/gabaritos/2005f0p2_energia.zip",
+          true
+        ],
+        "poker": [
+          "/static/extras/obi2005/gabaritos/2005f0p2_poker.zip",
+          true
+        ],
+        "vivo": [
+          "/static/extras/obi2005/gabaritos/2005f0p2_vivo.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2006": {
+    "1": {
+      "1": {
+        "conversa": [
+          "/static/extras/obi2006/gabaritos/2006f1p1_conversa.zip",
+          true
+        ],
+        "marg": [
+          "/static/extras/obi2006/gabaritos/2006f1p1_marg.zip",
+          true
+        ],
+        "mono": [
+          "/static/extras/obi2006/gabaritos/2006f1p1_mono.zip",
+          true
+        ]
+      },
+      "2": {
+        "caju": [
+          "/static/extras/obi2006/gabaritos/2006f1p2_caju.zip",
+          true
+        ],
+        "cartas": [
+          "/static/extras/obi2006/gabaritos/2006f1p2_cartas.zip",
+          true
+        ],
+        "escada": [
+          "/static/extras/obi2006/gabaritos/2006f1p2_escada.zip",
+          true
+        ],
+        "museu": [
+          "/static/extras/obi2006/gabaritos/2006f1p2_museu.zip",
+          true
+        ],
+        "truco": [
+          "/static/extras/obi2006/gabaritos/2006f1p2_truco.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "auto": [
+          "/static/extras/obi2006/gabaritos/2006f2p1_auto.zip",
+          true
+        ],
+        "lobo": [
+          "/static/extras/obi2006/gabaritos/2006f2p1_lobo.zip",
+          true
+        ],
+        "quadrado": [
+          "/static/extras/obi2006/gabaritos/2006f2p1_quadrado.zip",
+          true
+        ]
+      },
+      "2": {
+        "lobo": [
+          "/static/extras/obi2006/gabaritos/2006f2p2_lobo.zip",
+          true
+        ],
+        "penalidade": [
+          "/static/extras/obi2006/gabaritos/2006f2p2_penalidade.zip",
+          true
+        ],
+        "sub": [
+          "/static/extras/obi2006/gabaritos/2006f2p2_sub.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2007": {
+    "1": {
+      "1": {
+        "colisoes": [
+          "/static/extras/obi2007/gabaritos/2007f1p1_colisoes.zip",
+          true
+        ],
+        "magico": [
+          "/static/extras/obi2007/gabaritos/2007f1p1_magico.zip",
+          true
+        ],
+        "perdida": [
+          "/static/extras/obi2007/gabaritos/2007f1p1_perdida.zip",
+          true
+        ]
+      },
+      "2": {
+        "choc": [
+          "/static/extras/obi2007/gabaritos/2007f1p2_choc.zip",
+          true
+        ],
+        "mobile": [
+          "/static/extras/obi2007/gabaritos/2007f1p2_mobile.zip",
+          true
+        ],
+        "pastas": [
+          "/static/extras/obi2007/gabaritos/2007f1p2_pastas.zip",
+          true
+        ],
+        "repos": [
+          "/static/extras/obi2007/gabaritos/2007f1p2_repos.zip",
+          true
+        ],
+        "saco": [
+          "/static/extras/obi2007/gabaritos/2007f1p2_saco.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "metro": [
+          "/static/extras/obi2007/gabaritos/2007f2p1_metro.zip",
+          true
+        ],
+        "tele": [
+          "/static/extras/obi2007/gabaritos/2007f2p1_tele.zip",
+          true
+        ],
+        "uiqui": [
+          "/static/extras/obi2007/gabaritos/2007f2p1_uiqui.zip",
+          true
+        ]
+      },
+      "2": {
+        "lab": [
+          "/static/extras/obi2007/gabaritos/2007f2p2_lab.zip",
+          true
+        ],
+        "pizza": [
+          "/static/extras/obi2007/gabaritos/2007f2p2_pizza.zip",
+          true
+        ],
+        "tele": [
+          "/static/extras/obi2007/gabaritos/2007f2p2_tele.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2008": {
+    "1": {
+      "1": {
+        "insens": [
+          "/static/extras/obi2008/gabaritos/2008f1p1_insens.zip",
+          true
+        ],
+        "obi": [
+          "/static/extras/obi2008/gabaritos/2008f1p1_obi.zip",
+          true
+        ],
+        "telefone": [
+          "/static/extras/obi2008/gabaritos/2008f1p1_telefone.zip",
+          true
+        ]
+      },
+      "2": {
+        "aviao": [
+          "/static/extras/obi2008/gabaritos/2008f1p2_aviao.zip",
+          true
+        ],
+        "lanche": [
+          "/static/extras/obi2008/gabaritos/2008f1p2_lanche.zip",
+          true
+        ],
+        "obi": [
+          "/static/extras/obi2008/gabaritos/2008f1p2_obi.zip",
+          true
+        ],
+        "ogros": [
+          "/static/extras/obi2008/gabaritos/2008f1p2_ogros.zip",
+          true
+        ],
+        "telefone": [
+          "/static/extras/obi2008/gabaritos/2008f1p2_telefone.zip",
+          true
+        ]
+      },
+      "j": {
+        "obi": [
+          "/static/extras/obi2008/gabaritos/2008f1pj_obi.zip",
+          true
+        ],
+        "telefone2": [
+          "/static/extras/obi2008/gabaritos/2008f1pj_telefone2.zip",
+          true
+        ],
+        "vestib": [
+          "/static/extras/obi2008/gabaritos/2008f1pj_vestib.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "auto": [
+          "/static/extras/obi2008/gabaritos/2008f2p1_auto.zip",
+          true
+        ],
+        "cavalos": [
+          "/static/extras/obi2008/gabaritos/2008f2p1_cavalos.zip",
+          true
+        ],
+        "viagem": [
+          "/static/extras/obi2008/gabaritos/2008f2p1_viagem.zip",
+          true
+        ]
+      },
+      "2": {
+        "auto": [
+          "/static/extras/obi2008/gabaritos/2008f2p2_auto.zip",
+          true
+        ],
+        "chuva": [
+          "/static/extras/obi2008/gabaritos/2008f2p2_chuva.zip",
+          true
+        ],
+        "frete": [
+          "/static/extras/obi2008/gabaritos/2008f2p2_frete.zip",
+          true
+        ],
+        "ortografia": [
+          "/static/extras/obi2008/gabaritos/2008f2p2_ortografia.zip",
+          true
+        ]
+      },
+      "j": {
+        "acoes": [
+          "/static/extras/obi2008/gabaritos/2008f2pj_acoes.zip",
+          true
+        ],
+        "auto": [
+          "/static/extras/obi2008/gabaritos/2008f2pj_auto.zip",
+          true
+        ],
+        "minicalc": [
+          "/static/extras/obi2008/gabaritos/2008f2pj_minicalc.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2009": {
+    "1": {
+      "1": {
+        "bacterias": [
+          "/static/extras/obi2009/gabaritos/2009f1p1_bacterias.zip",
+          true
+        ],
+        "envelopes": [
+          "/static/extras/obi2009/gabaritos/2009f1p1_envelopes.zip",
+          true
+        ],
+        "overflow": [
+          "/static/extras/obi2009/gabaritos/2009f1p1_overflow.zip",
+          true
+        ],
+        "papel": [
+          "/static/extras/obi2009/gabaritos/2009f1p1_papel.zip",
+          true
+        ]
+      },
+      "2": {
+        "fugitivo": [
+          "/static/extras/obi2009/gabaritos/2009f1p2_fugitivo.zip",
+          true
+        ],
+        "mito": [
+          "/static/extras/obi2009/gabaritos/2009f1p2_mito.zip",
+          true
+        ],
+        "nota": [
+          "/static/extras/obi2009/gabaritos/2009f1p2_nota.zip",
+          true
+        ],
+        "pontes": [
+          "/static/extras/obi2009/gabaritos/2009f1p2_pontes.zip",
+          true
+        ]
+      },
+      "j": {
+        "envelopes1": [
+          "/static/extras/obi2009/gabaritos/2009f1pj_envelopes1.zip",
+          true
+        ],
+        "overflow": [
+          "/static/extras/obi2009/gabaritos/2009f1pj_overflow.zip",
+          true
+        ],
+        "papel": [
+          "/static/extras/obi2009/gabaritos/2009f1pj_papel.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "banda": [
+          "/static/extras/obi2009/gabaritos/2009f2p1_banda.zip",
+          true
+        ],
+        "chocolate": [
+          "/static/extras/obi2009/gabaritos/2009f2p1_chocolate.zip",
+          true
+        ],
+        "maratona": [
+          "/static/extras/obi2009/gabaritos/2009f2p1_maratona.zip",
+          true
+        ],
+        "olimp": [
+          "/static/extras/obi2009/gabaritos/2009f2p1_olimp.zip",
+          true
+        ]
+      },
+      "2": {
+        "banda": [
+          "/static/extras/obi2009/gabaritos/2009f2p2_banda.zip",
+          true
+        ],
+        "cadeiras": [
+          "/static/extras/obi2009/gabaritos/2009f2p2_cadeiras.zip",
+          true
+        ],
+        "chocolate": [
+          "/static/extras/obi2009/gabaritos/2009f2p2_chocolate.zip",
+          true
+        ],
+        "olimp": [
+          "/static/extras/obi2009/gabaritos/2009f2p2_olimp.zip",
+          true
+        ],
+        "simulador": [
+          "/static/extras/obi2009/gabaritos/2009f2p2_simulador.zip",
+          true
+        ]
+      },
+      "j": {
+        "banda": [
+          "/static/extras/obi2009/gabaritos/2009f2pj_banda.zip",
+          true
+        ],
+        "chocolate": [
+          "/static/extras/obi2009/gabaritos/2009f2pj_chocolate.zip",
+          true
+        ],
+        "maratona": [
+          "/static/extras/obi2009/gabaritos/2009f2pj_maratona.zip",
+          true
+        ],
+        "olimp": [
+          "/static/extras/obi2009/gabaritos/2009f2pj_olimp.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2010": {
+    "1": {
+      "1": {
+        "conta": [
+          "/static/extras/obi2010/gabaritos/2010f1p1_conta.zip",
+          true
+        ],
+        "copa": [
+          "/static/extras/obi2010/gabaritos/2010f1p1_copa.zip",
+          true
+        ],
+        "pedagio": [
+          "/static/extras/obi2010/gabaritos/2010f1p1_pedagio.zip",
+          true
+        ],
+        "times": [
+          "/static/extras/obi2010/gabaritos/2010f1p1_times.zip",
+          true
+        ]
+      },
+      "2": {
+        "batalha": [
+          "/static/extras/obi2010/gabaritos/2010f1p2_batalha.zip",
+          true
+        ],
+        "cometa": [
+          "/static/extras/obi2010/gabaritos/2010f1p2_cometa.zip",
+          true
+        ],
+        "elevador": [
+          "/static/extras/obi2010/gabaritos/2010f1p2_elevador.zip",
+          true
+        ],
+        "reuniao": [
+          "/static/extras/obi2010/gabaritos/2010f1p2_reuniao.zip",
+          true
+        ]
+      },
+      "j": {
+        "garcom": [
+          "/static/extras/obi2010/gabaritos/2010f1pj_garcom.zip",
+          true
+        ],
+        "pneu": [
+          "/static/extras/obi2010/gabaritos/2010f1pj_pneu.zip",
+          true
+        ],
+        "sedex": [
+          "/static/extras/obi2010/gabaritos/2010f1pj_sedex.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "chamada": [
+          "/static/extras/obi2010/gabaritos/2010f2p1_chamada.zip",
+          true
+        ],
+        "danca": [
+          "/static/extras/obi2010/gabaritos/2010f2p1_danca.zip",
+          true
+        ],
+        "fusoes": [
+          "/static/extras/obi2010/gabaritos/2010f2p1_fusoes.zip",
+          true
+        ],
+        "marciano": [
+          "/static/extras/obi2010/gabaritos/2010f2p1_marciano.zip",
+          true
+        ]
+      },
+      "2": {
+        "altas": [
+          "/static/extras/obi2010/gabaritos/2010f2p2_altas.zip",
+          true
+        ],
+        "floresta": [
+          "/static/extras/obi2010/gabaritos/2010f2p2_floresta.zip",
+          true
+        ],
+        "matrizes": [
+          "/static/extras/obi2010/gabaritos/2010f2p2_matrizes.zip",
+          true
+        ],
+        "telescopio": [
+          "/static/extras/obi2010/gabaritos/2010f2p2_telescopio.zip",
+          true
+        ],
+        "tradutor": [
+          "/static/extras/obi2010/gabaritos/2010f2p2_tradutor.zip",
+          true
+        ]
+      },
+      "j": {
+        "dentista": [
+          "/static/extras/obi2010/gabaritos/2010f2pj_dentista.zip",
+          true
+        ],
+        "escada": [
+          "/static/extras/obi2010/gabaritos/2010f2pj_escada.zip",
+          true
+        ],
+        "tacografo": [
+          "/static/extras/obi2010/gabaritos/2010f2pj_tacografo.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2011": {
+    "1": {
+      "1": {
+        "corrida2": [
+          "/static/extras/obi2011/gabaritos/2011f1p1_corrida2.zip",
+          true
+        ],
+        "pas": [
+          "/static/extras/obi2011/gabaritos/2011f1p1_pas.zip",
+          true
+        ],
+        "pulosapo": [
+          "/static/extras/obi2011/gabaritos/2011f1p1_pulosapo.zip",
+          true
+        ],
+        "triangulos": [
+          "/static/extras/obi2011/gabaritos/2011f1p1_triangulos.zip",
+          true
+        ]
+      },
+      "2": {
+        "cartografico": [
+          "/static/extras/obi2011/gabaritos/2011f1p2_cartografico.zip",
+          true
+        ],
+        "pesca": [
+          "/static/extras/obi2011/gabaritos/2011f1p2_pesca.zip",
+          true
+        ],
+        "quadrado": [
+          "/static/extras/obi2011/gabaritos/2011f1p2_quadrado.zip",
+          true
+        ],
+        "tesouro": [
+          "/static/extras/obi2011/gabaritos/2011f1p2_tesouro.zip",
+          true
+        ]
+      },
+      "j": {
+        "campominado": [
+          "/static/extras/obi2011/gabaritos/2011f1pj_campominado.zip",
+          true
+        ],
+        "corrida1": [
+          "/static/extras/obi2011/gabaritos/2011f1pj_corrida1.zip",
+          true
+        ],
+        "transporte": [
+          "/static/extras/obi2011/gabaritos/2011f1pj_transporte.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "bale": [
+          "/static/extras/obi2011/gabaritos/2011f2p1_bale.zip",
+          true
+        ],
+        "calculadora": [
+          "/static/extras/obi2011/gabaritos/2011f2p1_calculadora.zip",
+          true
+        ],
+        "colorir": [
+          "/static/extras/obi2011/gabaritos/2011f2p1_colorir.zip",
+          true
+        ],
+        "selos": [
+          "/static/extras/obi2011/gabaritos/2011f2p1_selos.zip",
+          true
+        ]
+      },
+      "2": {
+        "escalona": [
+          "/static/extras/obi2011/gabaritos/2011f2p2_escalona.zip",
+          true
+        ],
+        "expressoes": [
+          "/static/extras/obi2011/gabaritos/2011f2p2_expressoes.zip",
+          true
+        ],
+        "magico": [
+          "/static/extras/obi2011/gabaritos/2011f2p2_magico.zip",
+          true
+        ],
+        "rmapa": [
+          "/static/extras/obi2011/gabaritos/2011f2p2_rmapa.zip",
+          true
+        ]
+      },
+      "j": {
+        "calculadora": [
+          "/static/extras/obi2011/gabaritos/2011f2pj_calculadora.zip",
+          false
+        ],
+        "chuva": [
+          "/static/extras/obi2011/gabaritos/2011f2pj_chuva.zip",
+          true
+        ],
+        "gincana": [
+          "/static/extras/obi2011/gabaritos/2011f2pj_gincana.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2012": {
+    "1": {
+      "1": {
+        "corrida": [
+          "/static/extras/obi2012/gabaritos/2012f1p1_corrida.zip",
+          true
+        ],
+        "iguais": [
+          "/static/extras/obi2012/gabaritos/2012f1p1_iguais.zip",
+          true
+        ],
+        "vice": [
+          "/static/extras/obi2012/gabaritos/2012f1p1_vice.zip",
+          true
+        ]
+      },
+      "2": {
+        "cavalo": [
+          "/static/extras/obi2012/gabaritos/2012f1p2_cavalo.zip",
+          true
+        ],
+        "colchao": [
+          "/static/extras/obi2012/gabaritos/2012f1p2_colchao.zip",
+          true
+        ],
+        "frequencia": [
+          "/static/extras/obi2012/gabaritos/2012f1p2_frequencia.zip",
+          true
+        ],
+        "tarzan": [
+          "/static/extras/obi2012/gabaritos/2012f1p2_tarzan.zip",
+          true
+        ]
+      },
+      "j": {
+        "busca": [
+          "/static/extras/obi2012/gabaritos/2012f1pj_busca.zip",
+          true
+        ],
+        "campeonato": [
+          "/static/extras/obi2012/gabaritos/2012f1pj_campeonato.zip",
+          true
+        ],
+        "maior": [
+          "/static/extras/obi2012/gabaritos/2012f1pj_maior.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "carnaval": [
+          "/static/extras/obi2012/gabaritos/2012f2p1_carnaval.zip",
+          true
+        ],
+        "costa": [
+          "/static/extras/obi2012/gabaritos/2012f2p1_costa.zip",
+          true
+        ],
+        "guerra": [
+          "/static/extras/obi2012/gabaritos/2012f2p1_guerra.zip",
+          true
+        ]
+      },
+      "2": {
+        "album": [
+          "/static/extras/obi2012/gabaritos/2012f2p2_album.zip",
+          true
+        ],
+        "banco": [
+          "/static/extras/obi2012/gabaritos/2012f2p2_banco.zip",
+          true
+        ],
+        "bomba": [
+          "/static/extras/obi2012/gabaritos/2012f2p2_bomba.zip",
+          true
+        ],
+        "soma": [
+          "/static/extras/obi2012/gabaritos/2012f2p2_soma.zip",
+          true
+        ]
+      },
+      "j": {
+        "bolo": [
+          "/static/extras/obi2012/gabaritos/2012f2pj_bolo.zip",
+          true
+        ],
+        "chocolate": [
+          "/static/extras/obi2012/gabaritos/2012f2pj_chocolate.zip",
+          true
+        ],
+        "tenis": [
+          "/static/extras/obi2012/gabaritos/2012f2pj_tenis.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2013": {
+    "1": {
+      "1": {
+        "capital": [
+          "/static/extras/obi2013/gabaritos/2013f1p1_capital.zip",
+          true
+        ],
+        "corrida": [
+          "/static/extras/obi2013/gabaritos/2013f1p1_corrida.zip",
+          true
+        ],
+        "robo": [
+          "/static/extras/obi2013/gabaritos/2013f1p1_robo.zip",
+          true
+        ],
+        "rodovia": [
+          "/static/extras/obi2013/gabaritos/2013f1p1_rodovia.zip",
+          true
+        ]
+      },
+      "2": {
+        "alvo": [
+          "/static/extras/obi2013/gabaritos/2013f1p2_alvo.zip",
+          true
+        ],
+        "catalogo": [
+          "/static/extras/obi2013/gabaritos/2013f1p2_catalogo.zip",
+          true
+        ],
+        "lencol": [
+          "/static/extras/obi2013/gabaritos/2013f1p2_lencol.zip",
+          true
+        ],
+        "vende": [
+          "/static/extras/obi2013/gabaritos/2013f1p2_vende.zip",
+          true
+        ]
+      },
+      "j": {
+        "capital": [
+          "/static/extras/obi2013/gabaritos/2013f1pj_capital.zip",
+          true
+        ],
+        "saldo": [
+          "/static/extras/obi2013/gabaritos/2013f1pj_saldo.zip",
+          true
+        ],
+        "tomadas": [
+          "/static/extras/obi2013/gabaritos/2013f1pj_tomadas.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2014": {
+    "1": {
+      "1": {
+        "letra": [
+          "/static/extras/obi2014/gabaritos/2014f1p1_letra.zip",
+          true
+        ],
+        "semente": [
+          "/static/extras/obi2014/gabaritos/2014f1p1_semente.zip",
+          true
+        ],
+        "setas": [
+          "/static/extras/obi2014/gabaritos/2014f1p1_setas.zip",
+          true
+        ],
+        "triangulo": [
+          "/static/extras/obi2014/gabaritos/2014f1p1_triangulo.zip",
+          true
+        ]
+      },
+      "2": {
+        "copa": [
+          "/static/extras/obi2014/gabaritos/2014f1p2_copa.zip",
+          true
+        ],
+        "escada": [
+          "/static/extras/obi2014/gabaritos/2014f1p2_escada.zip",
+          true
+        ],
+        "fechadura": [
+          "/static/extras/obi2014/gabaritos/2014f1p2_fechadura.zip",
+          true
+        ],
+        "lingua": [
+          "/static/extras/obi2014/gabaritos/2014f1p2_lingua.zip",
+          true
+        ],
+        "pacman": [
+          "/static/extras/obi2014/gabaritos/2014f1p2_pacman.zip",
+          true
+        ]
+      },
+      "j": {
+        "fila": [
+          "/static/extras/obi2014/gabaritos/2014f1pj_fila.zip",
+          true
+        ],
+        "fliper": [
+          "/static/extras/obi2014/gabaritos/2014f1pj_fliper.zip",
+          true
+        ],
+        "gangorra": [
+          "/static/extras/obi2014/gabaritos/2014f1pj_gangorra.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "corredor": [
+          "/static/extras/obi2014/gabaritos/2014f2p1_corredor.zip",
+          true
+        ],
+        "decifra": [
+          "/static/extras/obi2014/gabaritos/2014f2p1_decifra.zip",
+          true
+        ],
+        "memoria": [
+          "/static/extras/obi2014/gabaritos/2014f2p1_memoria.zip",
+          true
+        ],
+        "quadrado": [
+          "/static/extras/obi2014/gabaritos/2014f2p1_quadrado.zip",
+          true
+        ]
+      },
+      "2": {
+        "blefe": [
+          "/static/extras/obi2014/gabaritos/2014f2p2_blefe.zip",
+          true
+        ],
+        "frequencia": [
+          "/static/extras/obi2014/gabaritos/2014f2p2_frequencia.zip",
+          true
+        ],
+        "mapa": [
+          "/static/extras/obi2014/gabaritos/2014f2p2_mapa.zip",
+          true
+        ],
+        "notas": [
+          "/static/extras/obi2014/gabaritos/2014f2p2_notas.zip",
+          true
+        ],
+        "tapetes": [
+          "/static/extras/obi2014/gabaritos/2014f2p2_tapetes.zip",
+          true
+        ]
+      },
+      "j": {
+        "bolinha": [
+          "/static/extras/obi2014/gabaritos/2014f2pj_bolinha.zip",
+          true
+        ],
+        "loteria": [
+          "/static/extras/obi2014/gabaritos/2014f2pj_loteria.zip",
+          true
+        ],
+        "sinuca": [
+          "/static/extras/obi2014/gabaritos/2014f2pj_sinuca.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2015": {
+    "1": {
+      "1": {
+        "arquivos": [
+          "/static/extras/obi2015/gabaritos/2015f1p1_arquivos.zip",
+          true
+        ],
+        "linhas": [
+          "/static/extras/obi2015/gabaritos/2015f1p1_linhas.zip",
+          true
+        ]
+      },
+      "2": {
+        "banco": [
+          "/static/extras/obi2015/gabaritos/2015f1p2_banco.zip",
+          true
+        ],
+        "caixinha": [
+          "/static/extras/obi2015/gabaritos/2015f1p2_caixinha.zip",
+          true
+        ],
+        "coral": [
+          "/static/extras/obi2015/gabaritos/2015f1p2_coral.zip",
+          true
+        ],
+        "quebra": [
+          "/static/extras/obi2015/gabaritos/2015f1p2_quebra.zip",
+          true
+        ],
+        "real": [
+          "/static/extras/obi2015/gabaritos/2015f1p2_real.zip",
+          true
+        ]
+      },
+      "j": {
+        "fita": [
+          "/static/extras/obi2015/gabaritos/2015f1pj_fita.zip",
+          true
+        ],
+        "mobile": [
+          "/static/extras/obi2015/gabaritos/2015f1pj_mobile.zip",
+          true
+        ],
+        "premio": [
+          "/static/extras/obi2015/gabaritos/2015f1pj_premio.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "capitais": [
+          "/static/extras/obi2015/gabaritos/2015f2p1_capitais.zip",
+          true
+        ],
+        "letras": [
+          "/static/extras/obi2015/gabaritos/2015f2p1_letras.zip",
+          true
+        ]
+      },
+      "2": {
+        "calculo": [
+          "/static/extras/obi2015/gabaritos/2015f2p2_calculo.zip",
+          true
+        ],
+        "chocolate": [
+          "/static/extras/obi2015/gabaritos/2015f2p2_chocolate.zip",
+          true
+        ],
+        "fila": [
+          "/static/extras/obi2015/gabaritos/2015f2p2_fila.zip",
+          true
+        ],
+        "macaco": [
+          "/static/extras/obi2015/gabaritos/2015f2p2_macaco.zip",
+          true
+        ],
+        "mina": [
+          "/static/extras/obi2015/gabaritos/2015f2p2_mina.zip",
+          true
+        ]
+      },
+      "j": {
+        "codigo": [
+          "/static/extras/obi2015/gabaritos/2015f2pj_codigo.zip",
+          true
+        ],
+        "impedido": [
+          "/static/extras/obi2015/gabaritos/2015f2pj_impedido.zip",
+          true
+        ],
+        "torre": [
+          "/static/extras/obi2015/gabaritos/2015f2pj_torre.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2016": {
+    "1": {
+      "1": {
+        "clube": [
+          "/static/extras/obi2016/gabaritos/2016f1p1_clube.zip",
+          true
+        ],
+        "tacos": [
+          "/static/extras/obi2016/gabaritos/2016f1p1_tacos.zip",
+          true
+        ]
+      },
+      "2": {
+        "chaves": [
+          "/static/extras/obi2016/gabaritos/2016f1p2_chaves.zip",
+          true
+        ],
+        "chuva": [
+          "/static/extras/obi2016/gabaritos/2016f1p2_chuva.zip",
+          true
+        ],
+        "hotel": [
+          "/static/extras/obi2016/gabaritos/2016f1p2_hotel.zip",
+          true
+        ],
+        "sanduiche": [
+          "/static/extras/obi2016/gabaritos/2016f1p2_sanduiche.zip",
+          true
+        ],
+        "toca": [
+          "/static/extras/obi2016/gabaritos/2016f1p2_toca.zip",
+          true
+        ]
+      },
+      "j": {
+        "jogo": [
+          "/static/extras/obi2016/gabaritos/2016f1pj_jogo.zip",
+          true
+        ],
+        "lampadas": [
+          "/static/extras/obi2016/gabaritos/2016f1pj_lampadas.zip",
+          true
+        ],
+        "morango": [
+          "/static/extras/obi2016/gabaritos/2016f1pj_morango.zip",
+          true
+        ]
+      },
+      "u": {
+        "avenida": [
+          "/static/extras/obi2016/gabaritos/2016f1pu_avenida.zip",
+          true
+        ],
+        "direcao": [
+          "/static/extras/obi2016/gabaritos/2016f1pu_direcao.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "arco": [
+          "/static/extras/obi2016/gabaritos/2016f2p1_arco.zip",
+          true
+        ],
+        "caminhos": [
+          "/static/extras/obi2016/gabaritos/2016f2p1_caminhos.zip",
+          true
+        ],
+        "caverna": [
+          "/static/extras/obi2016/gabaritos/2016f2p1_caverna.zip",
+          true
+        ],
+        "medalhas": [
+          "/static/extras/obi2016/gabaritos/2016f2p1_medalhas.zip",
+          true
+        ]
+      },
+      "2": {
+        "ciclovias": [
+          "/static/extras/obi2016/gabaritos/2016f2p2_ciclovias.zip",
+          true
+        ],
+        "falta": [
+          "/static/extras/obi2016/gabaritos/2016f2p2_falta.zip",
+          true
+        ],
+        "jardim": [
+          "/static/extras/obi2016/gabaritos/2016f2p2_jardim.zip",
+          true
+        ],
+        "pokemon": [
+          "/static/extras/obi2016/gabaritos/2016f2p2_pokemon.zip",
+          true
+        ],
+        "primo": [
+          "/static/extras/obi2016/gabaritos/2016f2p2_primo.zip",
+          true
+        ]
+      },
+      "j": {
+        "fuga": [
+          "/static/extras/obi2016/gabaritos/2016f2pj_fuga.zip",
+          true
+        ],
+        "gincana": [
+          "/static/extras/obi2016/gabaritos/2016f2pj_gincana.zip",
+          true
+        ]
+      },
+      "u": {
+        "arco_online": [
+          "/static/extras/obi2016/gabaritos/2016f2pu_arco_online.zip",
+          true
+        ],
+        "times": [
+          "/static/extras/obi2016/gabaritos/2016f2pu_times.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2017": {
+    "1": {
+      "1": {
+        "cofre": [
+          "/static/extras/obi2017/gabaritos/2017f1p1_cofre.zip",
+          true
+        ],
+        "teleferico": [
+          "/static/extras/obi2017/gabaritos/2017f1p1_teleferico.zip",
+          true
+        ]
+      },
+      "2": {
+        "botas": [
+          "/static/extras/obi2017/gabaritos/2017f1p2_botas.zip",
+          true
+        ],
+        "chefe": [
+          "/static/extras/obi2017/gabaritos/2017f1p2_chefe.zip",
+          true
+        ],
+        "game10": [
+          "/static/extras/obi2017/gabaritos/2017f1p2_game10.zip",
+          true
+        ]
+      },
+      "j": {
+        "bondinho": [
+          "/static/extras/obi2017/gabaritos/2017f1pj_bondinho.zip",
+          true
+        ],
+        "drone": [
+          "/static/extras/obi2017/gabaritos/2017f1pj_drone.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "cores": [
+          "/static/extras/obi2017/gabaritos/2017f2p1_cores.zip",
+          true
+        ]
+      },
+      "2": {
+        "frete": [
+          "/static/extras/obi2017/gabaritos/2017f2p2_frete.zip",
+          true
+        ],
+        "mapa": [
+          "/static/extras/obi2017/gabaritos/2017f2p2_mapa.zip",
+          true
+        ],
+        "papel": [
+          "/static/extras/obi2017/gabaritos/2017f2p2_papel.zip",
+          true
+        ],
+        "xerxes": [
+          "/static/extras/obi2017/gabaritos/2017f2p2_xerxes.zip",
+          true
+        ]
+      },
+      "j": {
+        "cartas": [
+          "/static/extras/obi2017/gabaritos/2017f2pj_cartas.zip",
+          true
+        ],
+        "montanha": [
+          "/static/extras/obi2017/gabaritos/2017f2pj_montanha.zip",
+          true
+        ],
+        "tabuleiro": [
+          "/static/extras/obi2017/gabaritos/2017f2pj_tabuleiro.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "bits": [
+          "/static/extras/obi2017/gabaritos/2017f3p1_bits.zip",
+          true
+        ],
+        "visita": [
+          "/static/extras/obi2017/gabaritos/2017f3p1_visita.zip",
+          true
+        ]
+      },
+      "2": {
+        "arranhaceu": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_arranhaceu.zip",
+          true
+        ],
+        "carrinho": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_carrinho.zip",
+          true
+        ],
+        "codigo": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_codigo.zip",
+          true
+        ],
+        "imperio": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_imperio.zip",
+          true
+        ],
+        "postes": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_postes.zip",
+          true
+        ],
+        "taxa": [
+          "/static/extras/obi2017/gabaritos/2017f3p2_taxa.zip",
+          true
+        ]
+      },
+      "j": {
+        "gomoku": [
+          "/static/extras/obi2017/gabaritos/2017f3pj_gomoku.zip",
+          true
+        ],
+        "onibus": [
+          "/static/extras/obi2017/gabaritos/2017f3pj_onibus.zip",
+          true
+        ],
+        "zip": [
+          "/static/extras/obi2017/gabaritos/2017f3pj_zip.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2018": {
+    "1": {
+      "1": {
+        "escadinha": [
+          "/static/extras/obi2018/gabaritos/2018f1p1_escadinha.zip",
+          true
+        ],
+        "piramide": [
+          "/static/extras/obi2018/gabaritos/2018f1p1_piramide.zip",
+          true
+        ],
+        "xadrez": [
+          "/static/extras/obi2018/gabaritos/2018f1p1_xadrez.zip",
+          true
+        ]
+      },
+      "2": {
+        "compensacao": [
+          "/static/extras/obi2018/gabaritos/2018f1p2_compensacao.zip",
+          true
+        ],
+        "figurinhas": [
+          "/static/extras/obi2018/gabaritos/2018f1p2_figurinhas.zip",
+          true
+        ],
+        "piso": [
+          "/static/extras/obi2018/gabaritos/2018f1p2_piso.zip",
+          true
+        ]
+      },
+      "j": {
+        "album": [
+          "/static/extras/obi2018/gabaritos/2018f1pj_album.zip",
+          true
+        ],
+        "basquete": [
+          "/static/extras/obi2018/gabaritos/2018f1pj_basquete.zip",
+          true
+        ]
+      },
+      "u": {
+        "ilhas": [
+          "/static/extras/obi2018/gabaritos/2018f1pu_ilhas.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "campeonato": [
+          "/static/extras/obi2018/gabaritos/2018f2p1_campeonato.zip",
+          true
+        ],
+        "relogios": [
+          "/static/extras/obi2018/gabaritos/2018f2p1_relogios.zip",
+          true
+        ]
+      },
+      "2": {
+        "elevador": [
+          "/static/extras/obi2018/gabaritos/2018f2p2_elevador.zip",
+          true
+        ],
+        "fuga": [
+          "/static/extras/obi2018/gabaritos/2018f2p2_fuga.zip",
+          true
+        ],
+        "wifi": [
+          "/static/extras/obi2018/gabaritos/2018f2p2_wifi.zip",
+          true
+        ]
+      },
+      "j": {
+        "capsulas": [
+          "/static/extras/obi2018/gabaritos/2018f2pj_capsulas.zip",
+          true
+        ],
+        "copa": [
+          "/static/extras/obi2018/gabaritos/2018f2pj_copa.zip",
+          true
+        ],
+        "pesos": [
+          "/static/extras/obi2018/gabaritos/2018f2pj_pesos.zip",
+          true
+        ]
+      },
+      "u": {
+        "sequencia": [
+          "/static/extras/obi2018/gabaritos/2018f2pu_sequencia.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "gato": [
+          "/static/extras/obi2018/gabaritos/2018f3p1_gato.zip",
+          true
+        ],
+        "recibo": [
+          "/static/extras/obi2018/gabaritos/2018f3p1_recibo.zip",
+          true
+        ]
+      },
+      "2": {
+        "baldes": [
+          "/static/extras/obi2018/gabaritos/2018f3p2_baldes.zip",
+          true
+        ],
+        "bolas": [
+          "/static/extras/obi2018/gabaritos/2018f3p2_bolas.zip",
+          true
+        ],
+        "cinco": [
+          "/static/extras/obi2018/gabaritos/2018f3p2_cinco.zip",
+          true
+        ],
+        "mancha": [
+          "/static/extras/obi2018/gabaritos/2018f3p2_mancha.zip",
+          true
+        ],
+        "muro": [
+          "/static/extras/obi2018/gabaritos/2018f3p2_muro.zip",
+          true
+        ]
+      },
+      "j": {
+        "batalha": [
+          "/static/extras/obi2018/gabaritos/2018f3pj_batalha.zip",
+          true
+        ],
+        "pulo": [
+          "/static/extras/obi2018/gabaritos/2018f3pj_pulo.zip",
+          true
+        ],
+        "troca": [
+          "/static/extras/obi2018/gabaritos/2018f3pj_troca.zip",
+          true
+        ]
+      },
+      "u": {
+        "maximin": [
+          "/static/extras/obi2018/gabaritos/2018f3pu_maximin.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2019": {
+    "1": {
+      "1": {
+        "amigos": [
+          "/static/extras/obi2019/gabaritos/2019f1p1_amigos.zip",
+          true
+        ],
+        "jogo": [
+          "/static/extras/obi2019/gabaritos/2019f1p1_jogo.zip",
+          true
+        ],
+        "nota": [
+          "/static/extras/obi2019/gabaritos/2019f1p1_nota.zip",
+          true
+        ]
+      },
+      "2": {
+        "chuva": [
+          "/static/extras/obi2019/gabaritos/2019f1p2_chuva.zip",
+          true
+        ],
+        "imperial": [
+          "/static/extras/obi2019/gabaritos/2019f1p2_imperial.zip",
+          true
+        ],
+        "soma": [
+          "/static/extras/obi2019/gabaritos/2019f1p2_soma.zip",
+          true
+        ]
+      },
+      "j": {
+        "domino": [
+          "/static/extras/obi2019/gabaritos/2019f1pj_domino.zip",
+          true
+        ],
+        "idade": [
+          "/static/extras/obi2019/gabaritos/2019f1pj_idade.zip",
+          true
+        ],
+        "secreta": [
+          "/static/extras/obi2019/gabaritos/2019f1pj_secreta.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "matriz": [
+          "/static/extras/obi2019/gabaritos/2019f2p1_matriz.zip",
+          true
+        ],
+        "ponto": [
+          "/static/extras/obi2019/gabaritos/2019f2p1_ponto.zip",
+          true
+        ]
+      },
+      "2": {
+        "detetive": [
+          "/static/extras/obi2019/gabaritos/2019f2p2_detetive.zip",
+          true
+        ],
+        "super": [
+          "/static/extras/obi2019/gabaritos/2019f2p2_super.zip",
+          true
+        ]
+      },
+      "j": {
+        "copos": [
+          "/static/extras/obi2019/gabaritos/2019f2pj_copos.zip",
+          true
+        ],
+        "nota": [
+          "/static/extras/obi2019/gabaritos/2019f2pj_nota.zip",
+          true
+        ],
+        "tabela": [
+          "/static/extras/obi2019/gabaritos/2019f2pj_tabela.zip",
+          true
+        ]
+      },
+      "u": {
+        "robo": [
+          "/static/extras/obi2019/gabaritos/2019f2pu_robo.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "colecao": [
+          "/static/extras/obi2019/gabaritos/2019f3p1_colecao.zip",
+          true
+        ],
+        "linhas": [
+          "/static/extras/obi2019/gabaritos/2019f3p1_linhas.zip",
+          true
+        ],
+        "mesa": [
+          "/static/extras/obi2019/gabaritos/2019f3p1_mesa.zip",
+          true
+        ]
+      },
+      "2": {
+        "etiquetas": [
+          "/static/extras/obi2019/gabaritos/2019f3p2_etiquetas.zip",
+          true
+        ],
+        "exploracao": [
+          "/static/extras/obi2019/gabaritos/2019f3p2_exploracao.zip",
+          true
+        ],
+        "metro": [
+          "/static/extras/obi2019/gabaritos/2019f3p2_metro.zip",
+          true
+        ],
+        "prix": [
+          "/static/extras/obi2019/gabaritos/2019f3p2_prix.zip",
+          true
+        ]
+      },
+      "j": {
+        "manchas": [
+          "/static/extras/obi2019/gabaritos/2019f3pj_manchas.zip",
+          true
+        ],
+        "parcelamento": [
+          "/static/extras/obi2019/gabaritos/2019f3pj_parcelamento.zip",
+          true
+        ],
+        "pares": [
+          "/static/extras/obi2019/gabaritos/2019f3pj_pares.zip",
+          true
+        ]
+      },
+      "u": {
+        "computador": [
+          "/static/extras/obi2019/gabaritos/2019f3pu_computador.zip",
+          true
+        ],
+        "xadrez": [
+          "/static/extras/obi2019/gabaritos/2019f3pu_xadrez.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2020": {
+    "1": {
+      "1": {
+        "3por2": [
+          "/static/extras/obi2020/gabaritos/2020f1p1_3por2.zip",
+          true
+        ],
+        "emoticons": [
+          "/static/extras/obi2020/gabaritos/2020f1p1_emoticons.zip",
+          true
+        ],
+        "fissura": [
+          "/static/extras/obi2020/gabaritos/2020f1p1_fissura.zip",
+          true
+        ],
+        "pandemia": [
+          "/static/extras/obi2020/gabaritos/2020f1p1_pandemia.zip",
+          true
+        ]
+      },
+      "2": {
+        "acelerador": [
+          "/static/extras/obi2020/gabaritos/2020f1p2_acelerador.zip",
+          true
+        ],
+        "irmaos": [
+          "/static/extras/obi2020/gabaritos/2020f1p2_irmaos.zip",
+          true
+        ],
+        "promocao": [
+          "/static/extras/obi2020/gabaritos/2020f1p2_promocao.zip",
+          true
+        ],
+        "ralouim": [
+          "/static/extras/obi2020/gabaritos/2020f1p2_ralouim.zip",
+          true
+        ]
+      },
+      "j": {
+        "caixas": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_caixas.zip",
+          true
+        ],
+        "camisetas": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_camisetas.zip",
+          true
+        ],
+        "escher": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_escher.zip",
+          true
+        ],
+        "piloto": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_piloto.zip",
+          true
+        ],
+        "relogio": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_relogio.zip",
+          true
+        ],
+        "tesouro": [
+          "/static/extras/obi2020/gabaritos/2020f1pj_tesouro.zip",
+          true
+        ]
+      },
+      "s": {
+        "bingo": [
+          "/static/extras/obi2020/gabaritos/2020f1ps_bingo.zip",
+          true
+        ],
+        "garamana": [
+          "/static/extras/obi2020/gabaritos/2020f1ps_garamana.zip",
+          true
+        ],
+        "musica": [
+          "/static/extras/obi2020/gabaritos/2020f1ps_musica.zip",
+          true
+        ],
+        "paciente": [
+          "/static/extras/obi2020/gabaritos/2020f1ps_paciente.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "estrada": [
+          "/static/extras/obi2020/gabaritos/2020f2p1_estrada.zip",
+          true
+        ],
+        "formiga": [
+          "/static/extras/obi2020/gabaritos/2020f2p1_formiga.zip",
+          true
+        ],
+        "formiga2": [
+          "/static/extras/obi2020/gabaritos/2020f2p1_formiga2.zip",
+          true
+        ]
+      },
+      "2": {
+        "fotografia": [
+          "/static/extras/obi2020/gabaritos/2020f2p2_fotografia.zip",
+          true
+        ],
+        "quebra": [
+          "/static/extras/obi2020/gabaritos/2020f2p2_quebra.zip",
+          true
+        ]
+      },
+      "j": {
+        "cruzadas": [
+          "/static/extras/obi2020/gabaritos/2020f2pj_cruzadas.zip",
+          true
+        ],
+        "lesma": [
+          "/static/extras/obi2020/gabaritos/2020f2pj_lesma.zip",
+          true
+        ],
+        "pinos": [
+          "/static/extras/obi2020/gabaritos/2020f2pj_pinos.zip",
+          true
+        ]
+      },
+      "u": {
+        "caixeiro": [
+          "/static/extras/obi2020/gabaritos/2020f2pu_caixeiro.zip",
+          false
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "jogo": [
+          "/static/extras/obi2020/gabaritos/2020f3p1_jogo.zip",
+          true
+        ],
+        "rede": [
+          "/static/extras/obi2020/gabaritos/2020f3p1_rede.zip",
+          true
+        ],
+        "trem": [
+          "/static/extras/obi2020/gabaritos/2020f3p1_trem.zip",
+          true
+        ]
+      },
+      "2": {
+        "candidatas": [
+          "/static/extras/obi2020/gabaritos/2020f3p2_candidatas.zip",
+          true
+        ]
+      },
+      "j": {
+        "atlanta": [
+          "/static/extras/obi2020/gabaritos/2020f3pj_atlanta.zip",
+          true
+        ],
+        "calorias": [
+          "/static/extras/obi2020/gabaritos/2020f3pj_calorias.zip",
+          true
+        ],
+        "celular": [
+          "/static/extras/obi2020/gabaritos/2020f3pj_celular.zip",
+          true
+        ],
+        "torre": [
+          "/static/extras/obi2020/gabaritos/2020f3pj_torre.zip",
+          true
+        ],
+        "torre2": [
+          "/static/extras/obi2020/gabaritos/2020f3pj_torre2.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2021": {
+    "1": {
+      "1": {
+        "tempo": [
+          "/static/extras/obi2021/gabaritos/2021f1p1_tempo.zip",
+          true
+        ],
+        "torneio": [
+          "/static/extras/obi2021/gabaritos/2021f1p1_torneio.zip",
+          false
+        ],
+        "zero": [
+          "/static/extras/obi2021/gabaritos/2021f1p1_zero.zip",
+          true
+        ]
+      },
+      "2": {
+        "cifra": [
+          "/static/extras/obi2021/gabaritos/2021f1p2_cifra.zip",
+          true
+        ],
+        "idade": [
+          "/static/extras/obi2021/gabaritos/2021f1p2_idade.zip",
+          false
+        ],
+        "tempo": [
+          "/static/extras/obi2021/gabaritos/2021f1p2_tempo.zip",
+          false
+        ],
+        "zero": [
+          "/static/extras/obi2021/gabaritos/2021f1p2_zero.zip",
+          false
+        ]
+      },
+      "j": {
+        "idade": [
+          "/static/extras/obi2021/gabaritos/2021f1pj_idade.zip",
+          true
+        ],
+        "plano": [
+          "/static/extras/obi2021/gabaritos/2021f1pj_plano.zip",
+          true
+        ],
+        "torneio": [
+          "/static/extras/obi2021/gabaritos/2021f1pj_torneio.zip",
+          true
+        ]
+      },
+      "s": {
+        "baralho": [
+          "/static/extras/obi2021/gabaritos/2021f1ps_baralho.zip",
+          true
+        ],
+        "tempo": [
+          "/static/extras/obi2021/gabaritos/2021f1ps_tempo.zip",
+          false
+        ],
+        "torneio": [
+          "/static/extras/obi2021/gabaritos/2021f1ps_torneio.zip",
+          false
+        ],
+        "zero": [
+          "/static/extras/obi2021/gabaritos/2021f1ps_zero.zip",
+          false
+        ]
+      }
+    },
+    "2": {
+      "b1": {
+        "calculo": [
+          "/static/extras/obi2021/gabaritos/2021f2bp1_calculo.zip",
+          true
+        ],
+        "lista": [
+          "/static/extras/obi2021/gabaritos/2021f2bp1_lista.zip",
+          true
+        ]
+      },
+      "b2": {
+        "poligrama": [
+          "/static/extras/obi2021/gabaritos/2021f2bp2_poligrama.zip",
+          true
+        ],
+        "senha": [
+          "/static/extras/obi2021/gabaritos/2021f2bp2_senha.zip",
+          true
+        ]
+      },
+      "bj": {
+        "anagrama": [
+          "/static/extras/obi2021/gabaritos/2021f2bpj_anagrama.zip",
+          true
+        ],
+        "pesquisa": [
+          "/static/extras/obi2021/gabaritos/2021f2bpj_pesquisa.zip",
+          true
+        ],
+        "potencia": [
+          "/static/extras/obi2021/gabaritos/2021f2bpj_potencia.zip",
+          true
+        ],
+        "recorde": [
+          "/static/extras/obi2021/gabaritos/2021f2bpj_recorde.zip",
+          true
+        ]
+      },
+      "bs": {
+        "minmax": [
+          "/static/extras/obi2021/gabaritos/2021f2bps_minmax.zip",
+          true
+        ]
+      },
+      "1": {
+        "retangulo": [
+          "/static/extras/obi2021/gabaritos/2021f2p1_retangulo.zip",
+          true
+        ]
+      },
+      "2": {
+        "passatempo": [
+          "/static/extras/obi2021/gabaritos/2021f2p2_passatempo.zip",
+          true
+        ],
+        "sanduiche": [
+          "/static/extras/obi2021/gabaritos/2021f2p2_sanduiche.zip",
+          true
+        ]
+      },
+      "j": {
+        "media": [
+          "/static/extras/obi2021/gabaritos/2021f2pj_media.zip",
+          true
+        ],
+        "pangrama": [
+          "/static/extras/obi2021/gabaritos/2021f2pj_pangrama.zip",
+          true
+        ],
+        "robo": [
+          "/static/extras/obi2021/gabaritos/2021f2pj_robo.zip",
+          true
+        ],
+        "tenis": [
+          "/static/extras/obi2021/gabaritos/2021f2pj_tenis.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "festa": [
+          "/static/extras/obi2021/gabaritos/2021f3p1_festa.zip",
+          true
+        ]
+      },
+      "2": {
+        "cubo": [
+          "/static/extras/obi2021/gabaritos/2021f3p2_cubo.zip",
+          true
+        ],
+        "falha": [
+          "/static/extras/obi2021/gabaritos/2021f3p2_falha.zip",
+          true
+        ],
+        "minhoca": [
+          "/static/extras/obi2021/gabaritos/2021f3p2_minhoca.zip",
+          true
+        ]
+      },
+      "j": {
+        "casamento": [
+          "/static/extras/obi2021/gabaritos/2021f3pj_casamento.zip",
+          true
+        ],
+        "ogro": [
+          "/static/extras/obi2021/gabaritos/2021f3pj_ogro.zip",
+          true
+        ],
+        "plano": [
+          "/static/extras/obi2021/gabaritos/2021f3pj_plano.zip",
+          true
+        ],
+        "sapo": [
+          "/static/extras/obi2021/gabaritos/2021f3pj_sapo.zip",
+          true
+        ]
+      },
+      "s": {
+        "teclado": [
+          "/static/extras/obi2021/gabaritos/2021f3ps_teclado.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2022": {
+    "1": {
+      "1": {
+        "show": [
+          "/static/extras/obi2022/gabaritos/2022f1p1_show.zip",
+          true
+        ]
+      },
+      "2": {
+        "bombom": [
+          "/static/extras/obi2022/gabaritos/2022f1p2_bombom.zip",
+          true
+        ],
+        "chuva": [
+          "/static/extras/obi2022/gabaritos/2022f1p2_chuva.zip",
+          true
+        ],
+        "maior": [
+          "/static/extras/obi2022/gabaritos/2022f1p2_maior.zip",
+          true
+        ]
+      },
+      "j": {
+        "cinema": [
+          "/static/extras/obi2022/gabaritos/2022f1pj_cinema.zip",
+          true
+        ],
+        "hotel": [
+          "/static/extras/obi2022/gabaritos/2022f1pj_hotel.zip",
+          true
+        ],
+        "magico": [
+          "/static/extras/obi2022/gabaritos/2022f1pj_magico.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "cameras": [
+          "/static/extras/obi2022/gabaritos/2022f2p1_cameras.zip",
+          true
+        ],
+        "tanque": [
+          "/static/extras/obi2022/gabaritos/2022f2p1_tanque.zip",
+          true
+        ]
+      },
+      "2": {
+        "subcadeias": [
+          "/static/extras/obi2022/gabaritos/2022f2p2_subcadeias.zip",
+          true
+        ],
+        "viagem": [
+          "/static/extras/obi2022/gabaritos/2022f2p2_viagem.zip",
+          true
+        ]
+      },
+      "j": {
+        "caminho": [
+          "/static/extras/obi2022/gabaritos/2022f2pj_caminho.zip",
+          true
+        ],
+        "piramide": [
+          "/static/extras/obi2022/gabaritos/2022f2pj_piramide.zip",
+          true
+        ],
+        "trofeu": [
+          "/static/extras/obi2022/gabaritos/2022f2pj_trofeu.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "carro": [
+          "/static/extras/obi2022/gabaritos/2022f3p1_carro.zip",
+          true
+        ],
+        "digitos": [
+          "/static/extras/obi2022/gabaritos/2022f3p1_digitos.zip",
+          true
+        ],
+        "pilhas": [
+          "/static/extras/obi2022/gabaritos/2022f3p1_pilhas.zip",
+          true
+        ],
+        "pizza": [
+          "/static/extras/obi2022/gabaritos/2022f3p1_pizza.zip",
+          true
+        ]
+      },
+      "2": {
+        "caravana": [
+          "/static/extras/obi2022/gabaritos/2022f3p2_caravana.zip",
+          true
+        ],
+        "digitos": [
+          "/static/extras/obi2022/gabaritos/2022f3p2_digitos.zip",
+          true
+        ],
+        "minhoca": [
+          "/static/extras/obi2022/gabaritos/2022f3p2_minhoca.zip",
+          true
+        ],
+        "pilhas": [
+          "/static/extras/obi2022/gabaritos/2022f3p2_pilhas.zip",
+          true
+        ],
+        "rodovia": [
+          "/static/extras/obi2022/gabaritos/2022f3p2_rodovia.zip",
+          true
+        ]
+      },
+      "j": {
+        "carro": [
+          "/static/extras/obi2022/gabaritos/2022f3pj_carro.zip",
+          true
+        ],
+        "digitos": [
+          "/static/extras/obi2022/gabaritos/2022f3pj_digitos.zip",
+          true
+        ],
+        "jogo": [
+          "/static/extras/obi2022/gabaritos/2022f3pj_jogo.zip",
+          true
+        ],
+        "teste": [
+          "/static/extras/obi2022/gabaritos/2022f3pj_teste.zip",
+          true
+        ]
+      },
+      "s": {
+        "caravana": [
+          "/static/extras/obi2022/gabaritos/2022f3ps_caravana.zip",
+          true
+        ],
+        "digitos": [
+          "/static/extras/obi2022/gabaritos/2022f3ps_digitos.zip",
+          true
+        ],
+        "quadrado": [
+          "/static/extras/obi2022/gabaritos/2022f3ps_quadrado.zip",
+          true
+        ],
+        "rodovia": [
+          "/static/extras/obi2022/gabaritos/2022f3ps_rodovia.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2023": {
+    "c": {
+      "1": {
+        "garrafoes": [
+          "/static/extras/obi2023/gabaritos/2023cfp1_garrafoes.zip",
+          true
+        ],
+        "machine-learning": [
+          "/static/extras/obi2023/gabaritos/2023cfp1_machine-learning.zip",
+          true
+        ]
+      },
+      "2": {
+        "viagem": [
+          "/static/extras/obi2023/gabaritos/2023cfp2_viagem.zip",
+          true
+        ]
+      },
+      "j": {
+        "casquinha": [
+          "/static/extras/obi2023/gabaritos/2023cfpj_casquinha.zip",
+          true
+        ],
+        "estante": [
+          "/static/extras/obi2023/gabaritos/2023cfpj_estante.zip",
+          true
+        ],
+        "pinguins": [
+          "/static/extras/obi2023/gabaritos/2023cfpj_pinguins.zip",
+          true
+        ],
+        "suco": [
+          "/static/extras/obi2023/gabaritos/2023cfpj_suco.zip",
+          true
+        ]
+      }
+    },
+    "1": {
+      "1": {
+        "estoque": [
+          "/static/extras/obi2023/gabaritos/2023f1p1_estoque.zip",
+          true
+        ],
+        "subsequencia": [
+          "/static/extras/obi2023/gabaritos/2023f1p1_subsequencia.zip",
+          true
+        ],
+        "var": [
+          "/static/extras/obi2023/gabaritos/2023f1p1_var.zip",
+          true
+        ]
+      },
+      "2": {
+        "contas": [
+          "/static/extras/obi2023/gabaritos/2023f1p2_contas.zip",
+          true
+        ],
+        "estoque": [
+          "/static/extras/obi2023/gabaritos/2023f1p2_estoque.zip",
+          true
+        ],
+        "leilao": [
+          "/static/extras/obi2023/gabaritos/2023f1p2_leilao.zip",
+          true
+        ],
+        "toupeira": [
+          "/static/extras/obi2023/gabaritos/2023f1p2_toupeira.zip",
+          true
+        ]
+      },
+      "j": {
+        "chinelos": [
+          "/static/extras/obi2023/gabaritos/2023f1pj_chinelos.zip",
+          true
+        ],
+        "epidemia": [
+          "/static/extras/obi2023/gabaritos/2023f1pj_epidemia.zip",
+          true
+        ],
+        "premio": [
+          "/static/extras/obi2023/gabaritos/2023f1pj_premio.zip",
+          true
+        ]
+      },
+      "s": {
+        "contas": [
+          "/static/extras/obi2023/gabaritos/2023f1ps_contas.zip",
+          true
+        ],
+        "estoque": [
+          "/static/extras/obi2023/gabaritos/2023f1ps_estoque.zip",
+          true
+        ],
+        "subsequencia": [
+          "/static/extras/obi2023/gabaritos/2023f1ps_subsequencia.zip",
+          true
+        ],
+        "toupeira": [
+          "/static/extras/obi2023/gabaritos/2023f1ps_toupeira.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "corrida": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_corrida.zip",
+          true
+        ],
+        "distintos": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_distintos.zip",
+          true
+        ],
+        "grupos": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_grupos.zip",
+          true
+        ],
+        "prefixo": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_prefixo.zip",
+          true
+        ],
+        "roda": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_roda.zip",
+          true
+        ],
+        "startup": [
+          "/static/extras/obi2023/gabaritos/2023f2p1_startup.zip",
+          true
+        ]
+      },
+      "2": {
+        "barcos": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_barcos.zip",
+          true
+        ],
+        "codigo": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_codigo.zip",
+          true
+        ],
+        "corrida": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_corrida.zip",
+          true
+        ],
+        "distintos": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_distintos.zip",
+          true
+        ],
+        "fortunas": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_fortunas.zip",
+          true
+        ],
+        "grupos": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_grupos.zip",
+          true
+        ],
+        "roda": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_roda.zip",
+          true
+        ],
+        "startup": [
+          "/static/extras/obi2023/gabaritos/2023f2p2_startup.zip",
+          true
+        ]
+      },
+      "j": {
+        "codigo": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_codigo.zip",
+          true
+        ],
+        "empresa": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_empresa.zip",
+          true
+        ],
+        "grupos": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_grupos.zip",
+          true
+        ],
+        "pizza": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_pizza.zip",
+          true
+        ],
+        "roda": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_roda.zip",
+          true
+        ],
+        "upa": [
+          "/static/extras/obi2023/gabaritos/2023f2pj_upa.zip",
+          true
+        ]
+      },
+      "s": {
+        "barcos": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_barcos.zip",
+          true
+        ],
+        "corrida": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_corrida.zip",
+          true
+        ],
+        "distintos": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_distintos.zip",
+          true
+        ],
+        "fortunas": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_fortunas.zip",
+          true
+        ],
+        "grupos": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_grupos.zip",
+          true
+        ],
+        "prefixo": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_prefixo.zip",
+          true
+        ],
+        "roda": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_roda.zip",
+          true
+        ],
+        "upa": [
+          "/static/extras/obi2023/gabaritos/2023f2ps_upa.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "domino": [
+          "/static/extras/obi2023/gabaritos/2023f3p1_domino.zip",
+          true
+        ]
+      },
+      "2": {
+        "bonecas": [
+          "/static/extras/obi2023/gabaritos/2023f3p2_bonecas.zip",
+          true
+        ],
+        "fastfood": [
+          "/static/extras/obi2023/gabaritos/2023f3p2_fastfood.zip",
+          true
+        ],
+        "piramide": [
+          "/static/extras/obi2023/gabaritos/2023f3p2_piramide.zip",
+          true
+        ],
+        "transportes": [
+          "/static/extras/obi2023/gabaritos/2023f3p2_transportes.zip",
+          true
+        ]
+      },
+      "j": {
+        "cabo": [
+          "/static/extras/obi2023/gabaritos/2023f3pj_cabo.zip",
+          true
+        ],
+        "mecanica": [
+          "/static/extras/obi2023/gabaritos/2023f3pj_mecanica.zip",
+          true
+        ],
+        "metronibus": [
+          "/static/extras/obi2023/gabaritos/2023f3pj_metronibus.zip",
+          true
+        ],
+        "tesouro": [
+          "/static/extras/obi2023/gabaritos/2023f3pj_tesouro.zip",
+          true
+        ]
+      }
+    }
+  },
+  "2024": {
+    "c": {
+      "1": {
+        "bibi": [
+          "/static/extras/obi2024/gabaritos/2024cfp1_bibi.zip",
+          true
+        ],
+        "mistura": [
+          "/static/extras/obi2024/gabaritos/2024cfp1_mistura.zip",
+          true
+        ],
+        "monstrinhos": [
+          "/static/extras/obi2024/gabaritos/2024cfp1_monstrinhos.zip",
+          true
+        ]
+      },
+      "2": {
+        "bombons": [
+          "/static/extras/obi2024/gabaritos/2024cfp2_bombons.zip",
+          true
+        ],
+        "estradas": [
+          "/static/extras/obi2024/gabaritos/2024cfp2_estradas.zip",
+          true
+        ],
+        "tabuleiro": [
+          "/static/extras/obi2024/gabaritos/2024cfp2_tabuleiro.zip",
+          true
+        ]
+      },
+      "j": {
+        "altura": [
+          "/static/extras/obi2024/gabaritos/2024cfpj_altura.zip",
+          true
+        ],
+        "aventura": [
+          "/static/extras/obi2024/gabaritos/2024cfpj_aventura.zip",
+          true
+        ],
+        "tesoura": [
+          "/static/extras/obi2024/gabaritos/2024cfpj_tesoura.zip",
+          true
+        ],
+        "vale": [
+          "/static/extras/obi2024/gabaritos/2024cfpj_vale.zip",
+          true
+        ]
+      }
+    },
+    "1": {
+      "1": {
+        "concurso": [
+          "/static/extras/obi2024/gabaritos/2024f1p1_concurso.zip",
+          false
+        ],
+        "ogro": [
+          "/static/extras/obi2024/gabaritos/2024f1p1_ogro.zip",
+          true
+        ],
+        "relogio": [
+          "/static/extras/obi2024/gabaritos/2024f1p1_relogio.zip",
+          true
+        ]
+      },
+      "2": {
+        "concurso": [
+          "/static/extras/obi2024/gabaritos/2024f1p2_concurso.zip",
+          false
+        ],
+        "jogo": [
+          "/static/extras/obi2024/gabaritos/2024f1p2_jogo.zip",
+          true
+        ],
+        "ogro": [
+          "/static/extras/obi2024/gabaritos/2024f1p2_ogro.zip",
+          true
+        ],
+        "relogio": [
+          "/static/extras/obi2024/gabaritos/2024f1p2_relogio.zip",
+          true
+        ]
+      },
+      "j": {
+        "bacterias": [
+          "/static/extras/obi2024/gabaritos/2024f1pj_bacterias.zip",
+          true
+        ],
+        "concurso": [
+          "/static/extras/obi2024/gabaritos/2024f1pj_concurso.zip",
+          true
+        ],
+        "ogro": [
+          "/static/extras/obi2024/gabaritos/2024f1pj_ogro.zip",
+          true
+        ]
+      },
+      "s": {
+        "jogo": [
+          "/static/extras/obi2024/gabaritos/2024f1ps_jogo.zip",
+          true
+        ],
+        "ogro": [
+          "/static/extras/obi2024/gabaritos/2024f1ps_ogro.zip",
+          true
+        ],
+        "placas": [
+          "/static/extras/obi2024/gabaritos/2024f1ps_placas.zip",
+          true
+        ],
+        "relogio": [
+          "/static/extras/obi2024/gabaritos/2024f1ps_relogio.zip",
+          true
+        ]
+      }
+    },
+    "2": {
+      "1": {
+        "concatena": [
+          "/static/extras/obi2024/gabaritos/2024f2p1_concatena.zip",
+          true
+        ],
+        "danca": [
+          "/static/extras/obi2024/gabaritos/2024f2p1_danca.zip",
+          true
+        ]
+      },
+      "2": {
+        "cubo": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_cubo.zip",
+          true
+        ],
+        "frutas": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_frutas.zip",
+          true
+        ],
+        "game": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_game.zip",
+          true
+        ],
+        "poder": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_poder.zip",
+          true
+        ],
+        "remove": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_remove.zip",
+          true
+        ],
+        "trio": [
+          "/static/extras/obi2024/gabaritos/2024f2p2_trio.zip",
+          true
+        ]
+      },
+      "j": {
+        "alfabeto": [
+          "/static/extras/obi2024/gabaritos/2024f2pj_alfabeto.zip",
+          true
+        ],
+        "atletismo": [
+          "/static/extras/obi2024/gabaritos/2024f2pj_atletismo.zip",
+          true
+        ],
+        "avenida": [
+          "/static/extras/obi2024/gabaritos/2024f2pj_avenida.zip",
+          true
+        ]
+      }
+    },
+    "3": {
+      "1": {
+        "brigadeiros": [
+          "/static/extras/obi2024/gabaritos/2024f3p1_brigadeiros.zip",
+          true
+        ],
+        "entrevistas": [
+          "/static/extras/obi2024/gabaritos/2024f3p1_entrevistas.zip",
+          true
+        ],
+        "hotel": [
+          "/static/extras/obi2024/gabaritos/2024f3p1_hotel.zip",
+          true
+        ],
+        "musical": [
+          "/static/extras/obi2024/gabaritos/2024f3p1_musical.zip",
+          true
+        ]
+      },
+      "2": {
+        "brigadeiros": [
+          "/static/extras/obi2024/gabaritos/2024f3p2_brigadeiros.zip",
+          true
+        ],
+        "burocracia": [
+          "/static/extras/obi2024/gabaritos/2024f3p2_burocracia.zip",
+          true
+        ],
+        "construtora": [
+          "/static/extras/obi2024/gabaritos/2024f3p2_construtora.zip",
+          true
+        ],
+        "pratos": [
+          "/static/extras/obi2024/gabaritos/2024f3p2_pratos.zip",
+          true
+        ],
+        "retas": [
+          "/static/extras/obi2024/gabaritos/2024f3p2_retas.zip",
+          true
+        ]
+      },
+      "j": {
+        "amigos": [
+          "/static/extras/obi2024/gabaritos/2024f3pj_amigos.zip",
+          true
+        ],
+        "cadeado": [
+          "/static/extras/obi2024/gabaritos/2024f3pj_cadeado.zip",
+          true
+        ],
+        "entrevistas": [
+          "/static/extras/obi2024/gabaritos/2024f3pj_entrevistas.zip",
+          true
+        ],
+        "hotel": [
+          "/static/extras/obi2024/gabaritos/2024f3pj_hotel.zip",
+          true
+        ]
+      }
+    }
+  }
+}
