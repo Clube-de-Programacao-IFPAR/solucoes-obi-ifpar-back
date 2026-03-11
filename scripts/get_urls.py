@@ -77,5 +77,5 @@ if __name__ == "__main__":
     answer_urls = get_links_parallel(exams, re.compile(r".+\.zip"))
 
     # dump all the urls in a file
-    with open("src/public/answer_urls.json", "w") as dump_file:
+    with open("public/answer_urls.json", "w") as dump_file:
         json.dump(parse_urls(answer_urls), dump_file, indent=2)
