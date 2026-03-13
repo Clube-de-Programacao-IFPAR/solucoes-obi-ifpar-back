@@ -1,8 +1,10 @@
-class Validate_question_dto:
-    
-    def __init__(self, year, level, name):
-        self.year =  year 
-        self.level = level 
-        self.name = name
+from typing import TypedDict
 
-        
+class Validate_question_dto(TypedDict):
+    year: str
+    phase: str
+    level: str
+    name: str
+
+    filename: str
+    file: str
