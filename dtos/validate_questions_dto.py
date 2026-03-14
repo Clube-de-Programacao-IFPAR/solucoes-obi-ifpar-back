@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-class Validate_question_dto(TypedDict):
+class ValidateQuestionDTO(TypedDict):
     year: str
     phase: str
     level: str

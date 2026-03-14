@@ -5,7 +5,7 @@ import tempfile
 import subprocess
 import time
 
-from ..dtos.validate_questions_dto import Validate_question_dto
+from ..dtos.validate_questions_dto import ValidateQuestionDTO
 
 
 def is_subtask_folder(name: str) -> bool:
@@ -140,7 +140,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     return results
 
 
-def validate_answers(data: Validate_question_dto):
+def validate_answers(data: ValidateQuestionDTO):
     year = data["year"]
     level = data["level"]
     phase = data["phase"]
