@@ -66,16 +66,13 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
             case ".c":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
-                #TODO: source the compile cmd from the official documentation
-                
-                subprocess.run(["gcc", "-x", "c", path, "-o", exe])
+                subprocess.run(["gcc", "-lm", "-O2", "-static" ,"-x", "c", path, "-o", exe])
 
                 cmd = [exe]
             case ".cpp" | ".c++":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
-                #TODO: source the compile cmd from the official documentation
-                subprocess.run(["g++", "-x", "c++", path, "-o", exe], check=True)
+                subprocess.run(["g++", "-std=gnu++20", "-O2", "-static", "-x", "c++", path, "-o", exe], check=True)
 
                 cmd = [exe]
             case ".java":
