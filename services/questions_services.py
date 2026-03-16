@@ -54,7 +54,7 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     cleanup = [["rm", "-rf", tempdir]]
 
     # write the code to a temporary file to pass as the code to run
-    codefile, path = tempfile.mkstemp(suffix=".c", dir=tempdir)
+    codefile, path = tempfile.mkstemp(dir=tempdir)
     os.write(codefile, file.encode())
 
     try:
