@@ -237,7 +237,7 @@ def validate_answers(data: ValidateQuestionDTO):
     response["max_memory"] = max(test["memory"] for sub in response["subtasks"] for test in sub["tests"])
 
     # data gotten, just return it
-    return {"sucess": 200, "data": response}
+    return {"success": 200, "data": response}
 
 # test .py
 # curl -X POST -H "Content-Type: application/json" -d '{"year":"2019","level":"1","phase":"1","name":"jogo","filename":"jogo.py","file":"n=int(input())+1;print(n*(n+1)//2)"}' http://127.0.0.1:5000/questions/validate
