@@ -171,8 +171,7 @@ def validate_answers(data: ValidateQuestionDTO):
     folder_path = pathlib.Path(os.path.abspath("public/answers/" + folder_name))
 
     if not os.path.exists(folder_path):
-        #TODO: fix returning status codes
-        return 404
+        return {}, 404
 
     # answers may be inside a tmp/ folder for some reason
     if os.path.isdir(folder_path / "tmp"):
@@ -217,7 +216,8 @@ def validate_answers(data: ValidateQuestionDTO):
 
     # compile/make the command to run the code properly
     
-    if (result := compile_code(pathlib.Path(data["filename"]), data["file"])) is not None:
+    if ((result := compile_code(pathlib.Path(data["filename"]), data["file"])) is not None
+        and result[0] is not None):
         cmd, cleanup = result
 
         for i, subtask in enumerate(subtasks):
@@ -229,8 +229,7 @@ def validate_answers(data: ValidateQuestionDTO):
     else:
         # no command to run the code was returned
         # can't fulfill request
-        #TODO: fix returning status codes
-        return 501
+        return {}, 501
 
     # add in the max time and max memory
     response["max_time"] = max(test["time"] for sub in response["subtasks"] for test in sub["tests"])
