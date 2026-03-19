@@ -4,6 +4,7 @@ import pathlib
 import tempfile
 import subprocess
 import time
+import psutil
 
 from ..dtos.validate_questions_dto import ValidateQuestionDTO
 
@@ -102,6 +103,28 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 stderr=subprocess.PIPE,
                 text=True
             )
+
+            ps_proc = psutil.Process(p.pid)
+
+            peak_mem = -1
+
+            # poll process every 10ms to check it's memory usage
+            while True:
+                if p.poll() is not None:
+                    break # process has finished
+                try:
+                    mem_info = ps_proc.memory_info()
+                    peak_mem = max(peak_mem, mem_info.rss)
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    break
+                time.sleep(0.010)
+            
+            # final check
+            try:
+                mem_info = ps_proc.memory_info()
+                peak_mem = max(peak_mem, mem_info.rss)
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                pass
             
             stdout, stderr = p.communicate(timeout=10)
 
@@ -112,17 +135,16 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             output = out.read_text().strip()
 
             if stderr.strip() == "" and stdout.strip() == output:
-            
                 result = {
                     "success": True,
                     "time": total_time,
-                    "memory": -1
+                    "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
             else:
                 result = {
                     "success": False,
                     "time": total_time,
-                    "memory": -1
+                    "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
         
         except subprocess.TimeoutExpired:
