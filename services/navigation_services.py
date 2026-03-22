@@ -33,7 +33,7 @@ def nav_levels(year: str, phase: str):
     result: dict = {
         "ano": year,
         "fase": phase,
-        "levels": answer_url_levels
+        "niveis": answer_url_levels
     }
 
     return result
