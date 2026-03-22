@@ -18,15 +18,50 @@ def nav_phases(year: str):
     # }
 
 def nav_levels(year: str, phase: str):
-    ...
-    # {
-    #   "ano": "2022",
-    #   "fase": "1",
-    #   "níveis": ["j", "1", "2", "s"]
-    # }
+    
+    answer_url_levels: list = []
+
+    if year not in json_data.keys():
+        return ("Ano não encontrado", 404)
+    
+    elif phase not in json_data[year].keys():
+        return ("Fase não encontrada", 404)
+
+    for level in json_data[year][phase].keys():
+        answer_url_levels.append(level)
+
+    result: dict = {
+        "ano": year,
+        "fase": phase,
+        "levels": answer_url_levels
+    }
+
+    return result
 
 def nav_problems(year: str, phase: str, level: str):
-    ...
+
+    answer_url_problems: list = []
+
+    if year not in json_data.keys():
+        return ("Ano não encontrado", 404)
+    
+    elif phase not in json_data[year].keys():
+        return ("Fase não encontrada", 404)
+    
+    elif level not in json_data[year][phase].keys():
+        return ("Nível não encontrado", 404)
+
+    for problem in json_data[year][phase][level].keys():
+        answer_url_problems.append(problem)
+
+    result: dict = {
+        "ano": year,
+        "fase": phase,
+        "nivel": level,
+        "questoes": answer_url_problems
+    }
+
+    return result
     # {
     #   "ano": "2022",
     #   "fase": "1",
