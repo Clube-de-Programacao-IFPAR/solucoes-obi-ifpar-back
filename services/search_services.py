@@ -20,7 +20,7 @@ def search(data: ValidateSearchDTO):
     level = data["level"]
     problem = data["problem"]
     
-    with open("../public/answer_urls.json", "r", encoding="utf-8") as json_file:
+    with open("./public/answer_urls.json", "r", encoding="utf-8") as json_file:
         json_data = json.load(json_file)
         
     if year is not None:
