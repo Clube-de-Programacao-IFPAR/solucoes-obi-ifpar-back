@@ -67,18 +67,19 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
             case ".c":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
-                subprocess.run(["gcc", "-lm", "-O2", "-static" ,"-x", "c", path, "-o", exe])
-
+                subprocess.run(["gcc", "-lm", "-O2", "-static", "-x", "c", path, "-o", exe], check=True)
                 cmd = [exe]
-            case ".cpp" | ".c++":
+            case ".cpp" | ".c++" | ".cc":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
                 subprocess.run(["g++", "-std=gnu++20", "-O2", "-static", "-x", "c++", path, "-o", exe], check=True)
-
                 cmd = [exe]
             case ".java":
-                #TODO: implement .java compiling
-                ...
+                # get class/file name (both must be the same)
+                class_name = filename.stem
+                subprocess.run(["javac", filename.name], cwd=tempdir, check=True)
+                cmd = ["java", "-cp", tempdir, class_name]
+            
     except Exception as e:
         print(f"exception when getting command: {e}")
 
@@ -171,7 +172,7 @@ def validate_answers(data: ValidateQuestionDTO):
     folder_path = pathlib.Path(os.path.abspath("public/answers/" + folder_name))
 
     if not os.path.exists(folder_path):
-        return {}, 404
+        return {"error": "not found"}, 404
 
     # answers may be inside a tmp/ folder for some reason
     if os.path.isdir(folder_path / "tmp"):
@@ -229,16 +230,18 @@ def validate_answers(data: ValidateQuestionDTO):
     else:
         # no command to run the code was returned
         # can't fulfill request
-        return {}, 501
+        return {"error": "no command to run"}, 501
 
     # add in the max time and max memory
     response["max_time"] = max(test["time"] for sub in response["subtasks"] for test in sub["tests"])
     response["max_memory"] = max(test["memory"] for sub in response["subtasks"] for test in sub["tests"])
 
     # data gotten, just return it
-    return {"success": 200, "data": response}
+    return {"data": response}, 200
 
 # test .py
 # curl -X POST -H "Content-Type: application/json" -d '{"year":"2019","level":"1","phase":"1","name":"jogo","filename":"jogo.py","file":"n=int(input())+1;print(n*(n+1)//2)"}' http://127.0.0.1:5000/questions/validate
 # test .c
 # curl -X POST -H "Content-Type: application/json" -d '{"year":"2019","level":"1","phase":"1","name":"jogo","filename":"jogo.c","file":"#include<stdio.h>\nint main() {int n;scanf(\"%d\", &n);printf(\"%d\\n\",(n+1)*(n+2)/2);return 0;}"}' http://127.0.0.1:5000/questions/validate
+# test .java
+# curl -X POST -H "Content-Type: application/json" -d "{\"year\":\"2019\",\"level\":\"1\",\"phase\":\"1\",\"name\":\"jogo\",\"filename\":\"jogo.java\",\"file\":\"import java.util.Scanner;public class jogo{public static void main(String[] args){Scanner s=new Scanner(System.in);int n=s.nextInt();int r=(n+1)*(n+2)/2;System.out.println(r);s.close();}}\"}" http://127.0.0.1:5000/questions/validate
