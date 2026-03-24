@@ -5,21 +5,39 @@ nav_BP = Blueprint("nav", __name__, url_prefix="/nav")
 
 @nav_BP.route("/years", methods=["GET"])
 def get_years():
-    data = nav_years()
-    return data
+    try:
+        data = nav_years()
+        return data
+    except Exception as erro:
+        return {"erro": f"Erro na requisição busca de anos: {erro}"}
 
 @nav_BP.route("/years/<string:year>/phases", methods=["GET"])
-def get_phases(year):
-    data = nav_phases(year)
-    return data
+def get_phases(year: str): # <-- ERRO 500
+    try:
+        data = nav_phases(year) 
+        return (data)
+    except TypeError as erro:
+        return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
+    except Exception as erro:
+        return {"erro": f"Erro na requisição de busca de fases por ano: {erro}"}
 
 @nav_BP.route("/years/<string:year>/phases/<string:phase>/levels", methods=["GET"])
-def get_levels(year, phase):
-    data = nav_levels(year, phase)
-    return data
+def get_levels(year: str, phase: str):
+    try:
+        data = nav_levels(year, phase)
+        return data
+    except TypeError as erro:
+        return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
+    except Exception as erro:
+        return {"erro": f"Erro requisição de busca de niveis por ano e fase: {erro}"}
 
 @nav_BP.route("/years/<string:year>/phases/<string:phase>/levels/<string:level>/problems", methods=["GET"])
 def get_problems(year: str, phase: str, level: str):
-    data = nav_problems(year, phase, level)
-    return data
+    try:
+        data = nav_problems(year, phase, level)
+        return data
+    except TypeError as erro:
+        return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
+    except Exception as erro:
+        return {"erro": f"Erro na requisição de busca de questões por ano, fase e nivel: {erro}"}
 
