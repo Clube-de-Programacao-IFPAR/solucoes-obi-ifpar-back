@@ -5,6 +5,7 @@ import tempfile
 import subprocess
 import time
 import psutil
+import shutil
 
 from ..dtos.validate_questions_dto import ValidateQuestionDTO
 
@@ -52,11 +53,14 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     _, ext = os.path.splitext(filename)
     cmd = None
     tempdir = tempfile.mkdtemp() # store compile artifacts
-    cleanup = [["rm", "-rf", tempdir]]
+    cleanup = [
+        lambda: shutil.rmtree(path, ignore_errors=True)
+    ]
 
     # write the code to a temporary file to pass as the code to run
     codefile, path = tempfile.mkstemp(dir=tempdir)
     os.write(codefile, file.encode())
+    os.close(codefile)
 
     try:
         match ext:
@@ -82,6 +86,12 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
             
     except Exception as e:
         print(f"exception when getting command: {e}")
+        print("running cleanup")
+        for command in cleanup:
+            if callable(command):
+                command()
+            else:
+                subprocess.call(command)
 
     return cmd, cleanup
 
@@ -226,7 +236,10 @@ def validate_answers(data: ValidateQuestionDTO):
         
         # cleanup tmp dirs and files
         for command in cleanup:
-            subprocess.call(command)
+            if callable(command):
+                command()
+            else:
+                subprocess.call(command)
     else:
         # no command to run the code was returned
         # can't fulfill request
