@@ -80,8 +80,11 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
                 cmd = [exe]
             case ".java":
                 # get class/file name (both must be the same)
-                class_name = filename.stem
-                subprocess.run(["javac", filename.name], cwd=tempdir, check=True)
+                # f-ing javac, have to rename the file
+                os.rename(path, pathlib.Path(path) / f"../{filename.name.capitalize()}")
+                path = pathlib.Path(path) / f"../{filename.name.capitalize()}"
+                class_name = filename.stem.capitalize()
+                subprocess.run(["javac", path], cwd=tempdir, check=True)
                 cmd = ["java", "-cp", tempdir, class_name]
             
     except Exception as e:
