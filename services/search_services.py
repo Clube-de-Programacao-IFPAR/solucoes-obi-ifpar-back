@@ -73,4 +73,4 @@ def search(data: ValidateSearchDTO):
     if problem:
         json_data = search_by_problem(json_data, problem)
     
-    return {"success": 200, "data": json_data}
+    return {"data": json_data}, 200
