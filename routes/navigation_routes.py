@@ -4,7 +4,7 @@ from ..services.navigation_services import nav_years, nav_phases, nav_levels, na
 nav_BP = Blueprint("nav", __name__, url_prefix="/nav")
 
 @nav_BP.route("/years", methods=["GET"])
-def get_years() -> tuple[dict[str, str], int]:
+def get_years():
     return nav_years()
 
 @nav_BP.route("/years/<string:year>/phases", methods=["GET"])
