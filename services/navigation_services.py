@@ -5,26 +5,40 @@ with open("./public/answer_urls.json", "r", encoding="utf-8") as json_file:
 
 def nav_years():
     try:
-        return {"anos": ["2022", "2023", "2024"]}
+        answer_url_years = []
+        for year in json_data.keys():
+            answer_url_years.append(year)
+
+        result: dict = { "anos": answer_url_years }
+
+        return result
+    
     except Exception as erro:
         return {"erro": f"Erro na busca de anos: {erro}"}
-    ...
-    # {
-    #     "anos": ["2022", "2023", "2024"]
-    # }
+    
 
-def nav_phases(year: str): # Terminar função
+def nav_phases(year: str): 
     try:
-        return {"ano": year, "fases": ["1", "2", "3"]}
+        answer_url_phases: list = []
+
+        if year not in json_data.keys():
+            return ("Ano não encontrado", 404)
+        
+        for phase in json_data[year].keys():
+            answer_url_phases.append(phase)
+
+        result: dict = {
+            "ano": year,
+            "phases": answer_url_phases
+        }
+
+        return result
+    
     except TypeError as erro:
         return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
     except Exception as erro:
         return {"erro": f"Erro na busca de fases por ano: {erro}"}
-    ...
-    # {
-    #   "ano": "2022",
-    #   "fases": ["1", "2", "3"]
-    # }
+
 
 def nav_levels(year: str, phase: str):
     try:
@@ -53,6 +67,7 @@ def nav_levels(year: str, phase: str):
     except Exception as erro:
         return {"erro": f"Erro na busca de niveis por ano e fase: {erro}"}
 
+
 def nav_problems(year: str, phase: str, level: str):
     try:
         answer_url_problems: list = []
@@ -77,13 +92,34 @@ def nav_problems(year: str, phase: str, level: str):
         }
 
         return result
-        # {
-        #   "ano": "2022",
-        #   "fase": "1",
-        #   "nivel": "1",
-        #   "questoes": ["nome", "otonome", "kaio", "AAAAAAAAAAAAAAAA"]
-        # }
+    
     except TypeError as erro:
         return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
     except Exception as erro:
         return {"erro": f"Erro na busca de questões por ano, fase e nivel: {erro}"}
+
+
+def nav_problem(year: str, phase: str, level: str, nameProblem: str): # O atributo nameProblem é um atributo identicado de questão temporario, caso no futuro queiramos usar ID
+    try:
+        specific_problem = None
+
+        for problem in json_data[year][phase][level].keys():
+            if problem == nameProblem:
+                specific_problem = json_data[year][phase][level][nameProblem]
+
+        if specific_problem is None:
+            return ("Questão não encontrada", 404)
+        else:
+            result: dict = {
+                "ano": year,
+                "fase": phase,
+                "nivel": level,
+                "questao": specific_problem
+            }
+
+            return result
+        
+    except TypeError as erro:
+        return {"erro": f"Tipo de parâmetro de consulta invalido: {erro}"}
+    except Exception as erro:
+        return {"erro": f"Erro na busca de questão específica por ano, fase, nivel e nome: {erro}"}
