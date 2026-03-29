@@ -174,10 +174,10 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
 
 def validate_answers(data: ValidateQuestionDTO):
-    year = data["year"]
-    level = data["level"]
-    phase = data["phase"]
-    name = data["name"]
+    year = data.year
+    level = data.level
+    phase = data.phase
+    name = data.name
 
     # re-assemble the folder name from the data
     folder_name = f"{year}f{level}p{phase}_{name}"
@@ -230,7 +230,7 @@ def validate_answers(data: ValidateQuestionDTO):
 
     # compile/make the command to run the code properly
     
-    if ((result := compile_code(pathlib.Path(data["filename"]), data["file"])) is not None
+    if ((result := compile_code(pathlib.Path(data.filename), data.file)) is not None
         and result[0] is not None):
         cmd, cleanup = result
 
@@ -257,6 +257,7 @@ def validate_answers(data: ValidateQuestionDTO):
 
 # test .py
 # curl -X POST -H "Content-Type: application/json" -d '{"year":"2019","level":"1","phase":"1","name":"jogo","filename":"jogo.py","file":"n=int(input())+1;print(n*(n+1)//2)"}' http://127.0.0.1:5000/questions/validate
+# curl -X POST -H "Content-Type: application/json" -d "{\}"
 # test .c
 # curl -X POST -H "Content-Type: application/json" -d '{"year":"2019","level":"1","phase":"1","name":"jogo","filename":"jogo.c","file":"#include<stdio.h>\nint main() {int n;scanf(\"%d\", &n);printf(\"%d\\n\",(n+1)*(n+2)/2);return 0;}"}' http://127.0.0.1:5000/questions/validate
 # test .java
