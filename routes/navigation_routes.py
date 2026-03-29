@@ -20,5 +20,5 @@ def get_problems(year: str, phase: str, level: str):
     return nav_problems(year, phase, level)
     
 @nav_BP.route("/years/<string:year>/phases/<string:phase>/levels/<string:level>/problems/<string:problem>", methods=["GET"])
-def get_specificProblem(year: str, phase: str, level: str, problem: str):
+def get_specific_problem(year: str, phase: str, level: str, problem: str):
     return nav_problem(year, phase, level, problem)
