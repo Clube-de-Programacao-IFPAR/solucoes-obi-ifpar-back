@@ -86,7 +86,7 @@ def download_zips_parallel(urls: str, base_folder="public/answers/", max_workers
     
     return results
 
-if __name__ == "__main__":
+def main():
     with open("public/answer_urls.json") as file:
         answer_data = json.load(file)
 
@@ -101,3 +101,6 @@ if __name__ == "__main__":
 
     # pretty print all errors to stdout
     pprint(invalid_zips, indent=2)
+
+if __name__ == "__main__":
+    main()

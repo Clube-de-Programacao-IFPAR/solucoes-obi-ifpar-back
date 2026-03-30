@@ -68,7 +68,7 @@ def parse_urls(urls: list[str]):
 
     return parsed
 
-if __name__ == "__main__":
+def main():
     # won't explain all the regex in here, just know they match the links needed
     years = get_links("/passadas/", re.compile(r"^/passadas/OBI.+"))
 
@@ -79,3 +79,6 @@ if __name__ == "__main__":
     # dump all the urls in a file
     with open("public/answer_urls.json", "w") as dump_file:
         json.dump(parse_urls(answer_urls), dump_file, indent=2)
+        
+if __name__ == "__main__":
+    main()
