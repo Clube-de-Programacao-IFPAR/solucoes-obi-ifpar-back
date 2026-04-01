@@ -1,24 +1,27 @@
+from ..errors.missing_field import MissingField
+from ..errors.invalid_field import InvalidField
+
 class ValidateSearchDTO:
     def __init__(
             self, 
-            year: str | None = None, 
-            phase: str | None = None, 
-            level: str | None = None, 
-            problem: str | None = None
+            year: str,
+            phase: str,
+            level: str,
+            problem: str
         ):
             self.year = year
             self.phase = phase
             self.level = level
             self.problem = problem
+        
+            self.validate()
 
     def validate(self):
         if self.year and not self.year.isdigit():
-            return {"error": "Invalid year format"}, 400
+            raise InvalidField("Invalid year format")
 
         if self.phase and self.phase not in ("c", "1", "2", "3"):
-            return {"error": "Invalid phase format"}, 400
+            raise InvalidField("Invalid phase format")
 
         if self.level and self.level not in ("j", "1", "2", "s", "u"):
-            return {"error": "Invalid level format"}, 400
-
-        return None
+            raise InvalidField("Invalid level format")

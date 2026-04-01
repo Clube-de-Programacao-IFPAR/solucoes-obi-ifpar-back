@@ -9,17 +9,13 @@ def validate_question():
     body = request.get_json()
 
     submit = ValidateQuestionDTO(
-        year = body.get("year"),
-        phase = body.get("phase"),
-        level = body.get("level"),
-        name = body.get("name"),
-        filename = body.get("filename"),
-        file = body.get("file"),
+        body.get("year"),
+        body.get("phase"),
+        body.get("level"),
+        body.get("name"),
+        body.get("filename"),
+        body.get("file"),
     )
-
-    error = submit.validate()
-    if error:
-        return error
 
     response, status = validate_answers(submit)
     return jsonify(response), status

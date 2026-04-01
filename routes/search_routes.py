@@ -13,9 +13,5 @@ def search_question():
         problem = request.args.get("problem")
     )
 
-    error = query.validate()
-    if error:
-        return error
-
     response, status = search(query)
     return jsonify(response), status

@@ -1,12 +1,15 @@
+from ..errors.missing_field import MissingField
+from ..errors.invalid_field import InvalidField
+
 class ValidateQuestionDTO:
     def __init__(
         self,
-        year: str | None = None,
-        phase: str | None = None,
-        level: str | None = None,
-        name: str | None = None,
-        filename: str | None = None,
-        file: str | None = None
+        year: str,
+        phase: str,
+        level: str,
+        name: str,
+        filename: str,
+        file: str
     ):
         self.year = year
         self.phase = phase
@@ -14,24 +17,33 @@ class ValidateQuestionDTO:
         self.name = name
         self.filename = filename
         self.file = file
+        
+        self.validate()
 
     def validate(self):
-        if not self.year or not self.year.isdigit():
-            return {"error": "Invalid year"}, 400
+        if not self.year:
+            raise MissingField("Missing field \"year\"")
 
-        if not self.phase or self.phase not in ("c", "1", "2", "3"):
-            return {"error": "Invalid phase"}, 400
+        if not self.year.isdigit():
+            raise InvalidField("Invalid field \"year\", not a number")
 
-        if not self.level or self.level not in ("j", "1", "2", "s", "u"):
-            return {"error": "Invalid level"}, 400
+        if not self.phase:
+            raise MissingField("Missing field \"phase\"")
+
+        if self.phase not in ("c", "1", "2", "3"):
+            raise InvalidField("Invalid field \"phase\", not in [\"c\", \"1\", \"2\", \"3\"]")
+
+        if not self.level:
+            raise MissingField("Missing field \"level\"")
+
+        if self.level not in ("j", "1", "2", "s", "u"):
+            raise InvalidField("Invalid field \"level\", not in [\"j\", \"1\", \"2\", \"s\", \"u\"]")
 
         if not self.name:
-            return {"error": "Missing problem name"}, 400
+            raise MissingField("Missing field \"name\"")
 
         if not self.filename:
-            return {"error": "Missing filename"}, 400
+            raise MissingField("Missing field \"filename\"")
 
         if not self.file:
-            return {"error": "Missing file content"}, 400
-
-        return None
+            raise MissingField("Missing field \"file\"")
