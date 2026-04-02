@@ -7,6 +7,8 @@ from functools import wraps
 from ..dtos.login_dto import LoginDTO
 from ..dtos.auth_dto import AuthDTO
 from ..dtos.reset_password_dto import ResetPasswordDTO
+from ..errors.unauthorized import Unauthorized
+from ..errors.forbidden import Forbidden
 
 JWT_SECRET_KEY = "Super Secret Key For JWTs by Clube de Programação IFPAR"
 
@@ -42,7 +44,7 @@ def login(data: LoginDTO):
             "token": jwt.encode(payload, key=JWT_SECRET_KEY, algorithm="HS256")
             }, 200
     else:
-        return {}, 401
+        raise Unauthorized("Incorrect username or password")
 
 
 def requires_admin(func):
@@ -51,17 +53,16 @@ def requires_admin(func):
         #TODO: add an error message to the thingies
         auth_header = request.headers.get('Authorization', type=str)
         if not auth_header:
-            return {}, 401
+            raise Unauthorized("Missing \"Authorization\" header")
         parts = auth_header.split() # should be: ['Bearer', jwt]
         if len(parts) != 2 or parts[0].lower() != "bearer":
-            return {}, 401
+            raise Unauthorized("Authorization header value is not a Bearer token")
         
         token = parts[1]
-        
         decoded: AuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"], verify=True)
         
         if not decoded["role"] == "admin":
-            return {}, 401
+            raise Forbidden("Authorization JWT token is not admin")
         
         return func(*args, **kwargs)
     

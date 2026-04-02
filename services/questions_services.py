@@ -8,7 +8,8 @@ import psutil
 import shutil
 
 from ..dtos.validate_questions_dto import ValidateQuestionDTO
-
+from ..errors.content_not_found import ContentNotFound
+from ..errors.not_implemented import NotSupported
 
 def is_subtask_folder(name: str) -> bool:
     return bool(re.match(r"^(:?\d+|teste\d+|test\d+)", name))
@@ -185,7 +186,7 @@ def validate_answers(data: ValidateQuestionDTO):
     folder_path = pathlib.Path(os.path.abspath("public/answers/" + folder_name))
 
     if not os.path.exists(folder_path):
-        return {"error": "not found"}, 404
+        raise ContentNotFound("Problem answer path not found")
 
     # answers may be inside a tmp/ folder for some reason
     if os.path.isdir(folder_path / "tmp"):
@@ -246,7 +247,7 @@ def validate_answers(data: ValidateQuestionDTO):
     else:
         # no command to run the code was returned
         # can't fulfill request
-        return {"error": "no command to run"}, 501
+        raise NotSupported("File extension not supported")
 
     # add in the max time and max memory
     response["max_time"] = max(test["time"] for sub in response["subtasks"] for test in sub["tests"])
