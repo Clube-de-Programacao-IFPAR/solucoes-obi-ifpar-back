@@ -5,7 +5,7 @@ from ..scripts import download_answers
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from ..dtos.login_dto import LoginDTO
-from ..dtos.admin_auth_dto import AdminAuthDTO
+from ..dtos.auth_dto import AuthDTO
 from ..dtos.reset_password_dto import ResetPasswordDTO
 
 JWT_SECRET_KEY = "Super Secret Key For JWTs by Clube de Programação IFPAR"
@@ -30,7 +30,7 @@ def login(data: LoginDTO):
     
     if is_admin(username, password):
         # send a token to the user for auth
-        payload: AdminAuthDTO = {
+        payload: AuthDTO = {
             "username": username,
             "role": "admin",
             "sub": str(jwt_count)
@@ -58,7 +58,7 @@ def requires_admin(func):
         
         token = parts[1]
         
-        decoded: AdminAuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"], verify=True)
+        decoded: AuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"], verify=True)
         
         if not decoded["role"] == "admin":
             return {}, 401
