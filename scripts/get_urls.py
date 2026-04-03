@@ -2,6 +2,7 @@ import requests, re, json
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
+from pathlib import Path
 
 BASE_URL = "https://olimpiada.ic.unicamp.br"
 VERSION = "0.1"
@@ -76,8 +77,10 @@ def main():
     
     answer_urls = get_links_parallel(exams, re.compile(r".+\.zip"))
 
+    output_path = Path("questions/answer_urls.json")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     # dump all the urls in a file
-    with open("public/answer_urls.json", "w") as dump_file:
+    with output_path.open("w") as dump_file:
         json.dump(parse_urls(answer_urls), dump_file, indent=2)
         
 if __name__ == "__main__":
