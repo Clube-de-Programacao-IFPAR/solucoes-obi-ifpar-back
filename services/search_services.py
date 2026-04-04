@@ -2,7 +2,7 @@ import json
 from ..dtos.validate_search_dto import ValidateSearchDTO
 
 try:
-    with open("./public/answer_urls.json", "r", encoding="utf-8") as json_file:
+    with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
         JSON_DATA = json.load(json_file)
 except FileNotFoundError:
     JSON_DATA = {}

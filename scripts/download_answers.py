@@ -23,7 +23,7 @@ def get_filtered_urls(data):
     return filtered
 
 def update_urls(urls: list[str]): # updates to True
-    with open("public/answer_urls.json") as file:
+    with open("questions/answer_urls.json") as file:
         answer_data = json.load(file)
 
     for url in urls:
@@ -45,11 +45,11 @@ def update_urls(urls: list[str]): # updates to True
         answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
 
     # dump all the urls back in the file
-    with open("public/answer_urls.json", "w") as dump_file:
+    with open("questions/answer_urls.json", "w") as dump_file:
         json.dump(answer_data, dump_file, indent=2)
 
 
-def download_zip(url: str, base_folder="public/answers/"):
+def download_zip(url: str, base_folder="questions/answers/"):
     print(f"downloading zip from url {url}")
     # get zip name from the url to use as a folder name
     subfolder = re.search(r".+/(.+)\.zip", url).group(1)
@@ -74,7 +74,7 @@ def download_zip(url: str, base_folder="public/answers/"):
     # success?
     return True, url
 
-def download_zips_parallel(urls: str, base_folder="public/answers/", max_workers=10):
+def download_zips_parallel(urls: str, base_folder="questions/answers/", max_workers=10):
     results = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -87,7 +87,7 @@ def download_zips_parallel(urls: str, base_folder="public/answers/", max_workers
     return results
 
 def main():
-    with open("public/answer_urls.json") as file:
+    with open("questions/answer_urls.json") as file:
         answer_data = json.load(file)
 
     answer_urls = get_filtered_urls(answer_data)

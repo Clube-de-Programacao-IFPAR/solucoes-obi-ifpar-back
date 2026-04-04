@@ -4,10 +4,10 @@ from ..errors.missing_field import MissingField
 from ..errors.content_not_found import ContentNotFound
 
 try:
-    with open("./public/answer_urls.json", "r", encoding="utf-8") as json_file:
+    with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
         JSON_DATA = json.load(json_file)
 except FileNotFoundError:
-    raise FileNotFoundError("Missing url json file at 'src/public/answer_urls.json', follow the README to fix")
+    raise FileNotFoundError("Missing url json file at 'src/questions/answer_urls.json', follow the README to fix")
 
 def validate(year=None, phase=None, level=None, problem=None):
     if year:
