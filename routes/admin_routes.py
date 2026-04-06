@@ -18,7 +18,7 @@ def clear_urls():
     data, status = admin_services.clear_urls()
     return data, status
 
-@admin_BP.route("download_zips", methods=["POST"])
+@admin_BP.route("/download_zips", methods=["POST"])
 def download_zips():
     data, status = admin_services.download_zips()
     return data, status
