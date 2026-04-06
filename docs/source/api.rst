@@ -11,3 +11,4 @@ data and output, including possible errors.
     :caption: Contents
 
     api/nav
+    api/search
