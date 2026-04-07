@@ -7,10 +7,10 @@ search_BP = Blueprint("search", __name__, url_prefix="/search")
 @search_BP.route("/", methods=["GET"])
 def search_question():
     """
-    :param string year: Match with exactly the given year
-    :param string phase: Match with exactly the given phase
-    :param string level: Match with exactly the given level
-    :param string problem: Match with exactly the given problem
+    :<json string year: Match with exactly the given year
+    :<json string phase: Match with exactly the given phase
+    :<json string level: Match with exactly the given level
+    :<json string problem: Match with exactly the given problem
 
     :status 200: Returns a nested dictionary of the data that match the given parameters.
                  Empty data means that there was no match for a term
