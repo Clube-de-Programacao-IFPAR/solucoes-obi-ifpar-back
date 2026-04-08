@@ -13,3 +13,4 @@ data and output, including possible errors.
     api/nav
     api/search
     api/admin
+    api/questions
