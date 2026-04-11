@@ -51,7 +51,7 @@ def parse_urls(urls: list[str]):
 
     for url in urls:
         # more regex yeeeeeeeeeeeeeeee
-        groups = re.search(r".+/(\d{4})(?:(c)f|f(\d))(b)?p([\djsu])_(.+).zip", url).groups()
+        groups = re.search(r".+/(\d{4})(?:(cf)|f(\d))(b)?p([\djsu])_(.+).zip", url).groups()
 
         # group 1 is year
         # group 2 is c when is cfobi (competição feminina)
