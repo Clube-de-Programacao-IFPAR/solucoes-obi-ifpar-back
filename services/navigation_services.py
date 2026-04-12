@@ -3,11 +3,17 @@ from ..errors.invalid_field import InvalidField
 from ..errors.missing_field import MissingField
 from ..errors.content_not_found import ContentNotFound
 
-try:
-    with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
-        JSON_DATA = json.load(json_file)
-except FileNotFoundError:
-    raise FileNotFoundError("Missing url json file at 'src/questions/answer_urls.json', follow the README to fix")
+JSON_DATA = {}
+
+def load_json():
+    global JSON_DATA
+    if JSON_DATA != {}:
+        return
+    try:
+        with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
+            JSON_DATA = json.load(json_file)
+    except FileNotFoundError:
+        raise FileNotFoundError("Missing url json file at 'src/questions/answer_urls.json', follow the README to fix")
 
 def validate(year=None, phase=None, level=None, problem=None):
     if year:
@@ -75,6 +81,8 @@ def nav_problems(year: str, phase: str, level: str) -> tuple[dict[str, str | lis
 def nav_problem(year: str, phase: str, level: str, problem: str) -> tuple[dict[str, str], int]:
     validate(year, phase, level, problem)
     
+    load_json()
+
     problem_url, problem_flag = JSON_DATA[year][phase][level][problem]
 
     return {

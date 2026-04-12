@@ -1,11 +1,17 @@
 import json
 from ..dtos.validate_search_dto import ValidateSearchDTO
 
-try:
-    with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
-        JSON_DATA = json.load(json_file)
-except FileNotFoundError:
-    JSON_DATA = {}
+JSON_DATA = {}
+
+def load_json():
+    global JSON_DATA
+    if JSON_DATA != {}:
+        return
+    try:
+        with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
+            JSON_DATA = json.load(json_file)
+    except FileNotFoundError:
+        JSON_DATA = {}
 
 def search_by_year(data: dict, year: str) -> dict[str, dict]:
     if year in data:
@@ -61,6 +67,8 @@ def search(data: ValidateSearchDTO) -> tuple[dict[str, dict | str], int]:
         level = data.level
         problem = data.problem
         
+        load_json()
+
         json_data = JSON_DATA
 
         if year:
