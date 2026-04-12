@@ -16,6 +16,8 @@ def load_json():
         raise FileNotFoundError("Missing url json file at 'src/questions/answer_urls.json', follow the README to fix")
 
 def validate(year=None, phase=None, level=None, problem=None):
+    load_json()
+
     if year:
         if not year.isdigit():
             raise InvalidField("Invalid year format")
@@ -41,6 +43,8 @@ def validate(year=None, phase=None, level=None, problem=None):
     return None
 
 def nav_years() -> tuple[dict[str, str | list[str]], int]:
+    load_json()
+
     answer_url_years = list(JSON_DATA.keys())
 
     return {"anos": answer_url_years}, 200
@@ -80,8 +84,6 @@ def nav_problems(year: str, phase: str, level: str) -> tuple[dict[str, str | lis
 
 def nav_problem(year: str, phase: str, level: str, problem: str) -> tuple[dict[str, str], int]:
     validate(year, phase, level, problem)
-    
-    load_json()
 
     problem_url, problem_flag = JSON_DATA[year][phase][level][problem]
 
