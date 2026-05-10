@@ -48,15 +48,16 @@ def search_by_problem(data: dict, problem: str) -> dict[str, dict]:
     for year, year_data in data.items():
         for phase, phase_data in year_data.items():
             for level, level_data in phase_data.items():
-                if problem in level_data:
-                    if year not in result:
-                        result[year] = {}
-                    if phase not in result[year]:
-                        result[year][phase] = {}
-                    if level not in result[year][phase]:
-                        result[year][phase][level] = {}
-                    
-                    result[year][phase][level][problem] = level_data[problem]
+                for prob in level_data:
+                    if problem == prob[:len(problem)]:
+                        if year not in result:
+                            result[year] = {}
+                        if phase not in result[year]:
+                            result[year][phase] = {}
+                        if level not in result[year][phase]:
+                            result[year][phase][level] = {}
+                        
+                        result[year][phase][level][prob] = level_data[prob]
     
     return result
 
