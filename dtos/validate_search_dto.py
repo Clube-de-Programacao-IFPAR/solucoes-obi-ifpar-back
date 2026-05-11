@@ -20,8 +20,8 @@ class ValidateSearchDTO:
         if self.year and not self.year.isdigit():
             raise InvalidField("Invalid year format")
 
-        if self.phase and self.phase not in ("c", "1", "2", "3"):
+        if self.phase and self.phase not in ("cf", "0", "1", "2", "3"):
             raise InvalidField("Invalid phase format")
 
-        if self.level and self.level not in ("j", "1", "2", "s", "u"):
+        if self.level and self.level not in ("j", "0", "1", "2", "s", "u"):
             raise InvalidField("Invalid level format")

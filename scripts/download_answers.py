@@ -41,8 +41,14 @@ def update_urls(urls: list[str]): # updates to True
 
         # as per specs in notion, [0] is url, [1] marks avaliability
         data = [url, True]
-
-        answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
+        
+        try:
+            answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
+        except KeyError:
+            # fixes edge case
+            # some years may use "cf" instead of "c" as a key in the url
+            if groups[1] == "c":
+                answer_data[groups[0]]["cf"][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
 
     # dump all the urls back in the file
     with open("questions/answer_urls.json", "w") as dump_file:

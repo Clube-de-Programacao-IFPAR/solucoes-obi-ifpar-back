@@ -181,7 +181,7 @@ def validate_answers(data: ValidateQuestionDTO):
     name = data.name
 
     # re-assemble the folder name from the data
-    folder_name = f"{year}f{level}p{phase}_{name}"
+    folder_name = f"{year}f{phase}p{level}_{name}"
 
     folder_path = pathlib.Path(os.path.abspath("questions/answers/" + folder_name))
 
@@ -193,6 +193,9 @@ def validate_answers(data: ValidateQuestionDTO):
         folder_path = folder_path / "tmp"
 
     # unzipped zip may sometimes not have a folder inside it idk
+    for folder in os.listdir(folder_path):
+        if str(folder).endswith(name):
+            folder_path = folder_path / folder
     if os.path.isdir(folder_path / folder_name):
         folder_path = folder_path / folder_name
     if os.path.isdir(folder_path / name):

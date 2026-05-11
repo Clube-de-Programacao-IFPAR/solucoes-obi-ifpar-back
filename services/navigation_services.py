@@ -25,13 +25,13 @@ def validate(year=None, phase=None, level=None, problem=None):
             raise ContentNotFound("Year not found")
 
     if phase:
-        if phase not in ("c", "1", "2", "3"):
+        if phase not in ("cf", "1", "2", "3", "0"):
             raise InvalidField("Invalid phase format")
         if phase not in JSON_DATA[year]:
             raise ContentNotFound("Phase not found")
 
     if level:
-        if level not in ("j", "1", "2", "s", "u"):
+        if level not in ("j", "1", "2", "s", "u", "0"):
             raise InvalidField("Invalid level format")
         if level not in JSON_DATA[year][phase]:
             raise ContentNotFound("Level not found")

@@ -30,14 +30,14 @@ class ValidateQuestionDTO:
         if not self.phase:
             raise MissingField("Missing field \"phase\"")
 
-        if self.phase not in ("c", "1", "2", "3"):
-            raise InvalidField("Invalid field \"phase\", not in [\"c\", \"1\", \"2\", \"3\"]")
+        if self.phase not in ("cf", "0", "1", "2", "3"):
+            raise InvalidField("Invalid field \"phase\", not in [\"cf\", \"0\", \"1\", \"2\", \"3\"]")
 
         if not self.level:
             raise MissingField("Missing field \"level\"")
 
-        if self.level not in ("j", "1", "2", "s", "u"):
-            raise InvalidField("Invalid field \"level\", not in [\"j\", \"1\", \"2\", \"s\", \"u\"]")
+        if self.level not in ("j", "0", "1", "2", "s", "u"):
+            raise InvalidField("Invalid field \"level\", not in [\"j\", \"0\", \"1\", \"2\", \"s\", \"u\"]")
 
         if not self.name:
             raise MissingField("Missing field \"name\"")
