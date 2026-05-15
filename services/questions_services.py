@@ -194,7 +194,7 @@ def validate_answers(data: ValidateQuestionDTO):
 
     # unzipped zip may sometimes not have a folder inside it idk
     for folder in os.listdir(folder_path):
-        if str(folder).endswith(name):
+        if name in str(folder):
             folder_path = folder_path / folder
     if os.path.isdir(folder_path / folder_name):
         folder_path = folder_path / folder_name
