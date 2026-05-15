@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 from flask import request
 import jwt
 from ..scripts import get_urls
@@ -10,11 +12,17 @@ from ..dtos.reset_password_dto import ResetPasswordDTO
 from ..errors.unauthorized import Unauthorized
 from ..errors.forbidden import Forbidden
 
-JWT_SECRET_KEY = "Super Secret Key For JWTs by Clube de Programação IFPAR"
+load_dotenv()
+
+JWT_SECRET_KEY = os.getenv("ADMIN_JWT_SECRET_KEY")
+
+if JWT_SECRET_KEY is None:
+    print("Include in the .env the ADMIN_JWT_SECRET_KEY")
+    exit(1)
 
 # default for now just for testing
 admin_user = "admin"
-admin_pass = generate_password_hash("admin")
+admin_pass = generate_password_hash(os.getenv("ADMIN_PASSWORD"))
 
 jwt_count = 0
 
