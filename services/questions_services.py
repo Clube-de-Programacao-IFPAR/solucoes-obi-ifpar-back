@@ -66,7 +66,7 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     try:
         match ext:
             case ".py":
-                cmd = ["python3", path]
+                cmd = ["python", path]
             case ".js":
                 cmd = ["node", path]
             case ".c":
@@ -82,9 +82,9 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
             case ".java":
                 # get class/file name (both must be the same)
                 # f-ing javac, have to rename the file
-                os.rename(path, pathlib.Path(path) / f"../{filename.name.capitalize()}")
-                path = pathlib.Path(path) / f"../{filename.name.capitalize()}"
-                class_name = filename.stem.capitalize()
+                os.rename(path, pathlib.Path(path) / f"../{filename.name}")
+                path = pathlib.Path(path) / f"../{filename.name}"
+                class_name = filename.stem
                 subprocess.run(["javac", path], cwd=tempdir, check=True)
                 cmd = ["java", "-cp", tempdir, class_name]
             
