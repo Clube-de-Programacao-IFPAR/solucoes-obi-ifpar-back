@@ -181,7 +181,7 @@ def validate_answers(data: ValidateQuestionDTO):
     name = data.name
 
     # re-assemble the folder name from the data
-    folder_name = f"{year}{f"f{phase}" if phase != "cf" else "cf"}p{level}_{name}"
+    folder_name = f"{year}{f'f{phase}' if phase != 'cf' else 'cf'}p{level}_{name}"
 
     folder_path = pathlib.Path(os.path.abspath("questions/answers/" + folder_name))
 
