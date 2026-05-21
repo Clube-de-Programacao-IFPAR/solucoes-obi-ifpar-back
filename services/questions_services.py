@@ -176,12 +176,12 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
 def validate_answers(data: ValidateQuestionDTO):
     year = data.year
-    level = data.level
+    #level = data.level unneeded to get the folder name and path
     phase = data.phase
     name = data.name
 
     # re-assemble the folder name from the data
-    folder_name = f"{year}{f'f{phase}' if phase != 'cf' else 'cf'}p{level}_{name}"
+    folder_name = f"{year}_{phase}_{name}"
 
     folder_path = pathlib.Path(os.path.abspath("questions/answers/" + folder_name))
 

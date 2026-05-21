@@ -16,6 +16,8 @@ if app.secret_key is None:
     print("Include in the .env the OBI_FLASK_SECRET")
     exit(1)
 
+app.url_map.merge_slashes = False
+
 register_routes(app)
 register_error_handlers(app)
 

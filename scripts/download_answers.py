@@ -10,15 +10,16 @@ BASE_URL = "https://olimpiada.ic.unicamp.br"
 VERSION = "0.1"
 AGENT_NAME = f"ANSWER-LINK-DOWNLOADER/{VERSION}"
 
-def get_filtered_urls(data):
+def get_filtered_urls(data: dict[dict[dict[dict[dict]]]]):
     filtered = []
-    for year in data.values():
-        for phase in year.values():
-            for naming_is_hard in phase.values():
-                for url in naming_is_hard.values():
-                    if not url[1]:
+    for year_key, year in data.items():
+        for phase_key, phase in year.items():
+            for level_key, level in phase.items():
+                level: dict = level
+                for name, info in level.items():
+                    if not info[1]:
                         # url has not been downloaded, append to download later
-                        filtered.append(url[0])
+                        filtered.append((info[0], f"{year_key}_{phase_key}_{name}"))
     
     return filtered
 
@@ -28,10 +29,9 @@ def update_urls(urls: list[str]): # updates to True
 
     for url in urls:
         # more regex yeeeeeeeeeeeeeeee
-        groups = re.search(r".+/(\d{4})(?:(c)f|f(\d))(b)?p([\djsu])_(.+).zip", url).groups()
+        groups = re.search(r".+/(\d{4})(?:(cf)|f(\d))(b)?p([\djsu])_(.+).zip", url[0]).groups()
 
         # group 1 is year
-        # group 2 is c when is cfobi (competição feminina)
         # group 3 is normal phase
         # group 4 is b when it's split in A-B
         # group 5 is level of exam
@@ -45,27 +45,26 @@ def update_urls(urls: list[str]): # updates to True
         try:
             answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
         except KeyError:
-            # fixes edge case
-            # some years may use "cf" instead of "c" as a key in the url
-            if groups[1] == "c":
-                answer_data[groups[0]]["cf"][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
+            list(answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")].values())[0][groups[5]] = data
+            
 
     # dump all the urls back in the file
     with open("questions/answer_urls.json", "w") as dump_file:
         json.dump(answer_data, dump_file, indent=2)
 
 
-def download_zip(url: str, base_folder="questions/answers/"):
+def download_zip(url: list[str, str], base_folder="questions/answers/"):
+    zip_url, name = url[0], url[1]
     print(f"downloading zip from url {url}")
     # get zip name from the url to use as a folder name
-    subfolder = re.search(r".+/(.+)\.zip", url).group(1)
+    subfolder = name
 
-    res = requests.get(BASE_URL + url, timeout=10, headers={"User-Agent": AGENT_NAME})
+    res = requests.get(BASE_URL + zip_url, timeout=10, headers={"User-Agent": AGENT_NAME})
 
     if res.status_code != 200 and res.status_code != 201:
-        invalid_zips[url] = f"ERROR {res.status_code}"
-        print(f"Could not access zip from page {BASE_URL+url}, error: {res.status_code}")
-        return False, url # silently fail as to not prevent other downloads from working
+        invalid_zips[zip_url] = f"ERROR {res.status_code}"
+        print(f"Could not access zip from page {BASE_URL+zip_url}, error: {res.status_code}")
+        return False, zip_url # silently fail as to not prevent other downloads from working
 
 
     zip_bytes = BytesIO(res.content)
@@ -73,14 +72,16 @@ def download_zip(url: str, base_folder="questions/answers/"):
         with zipfile.ZipFile(zip_bytes) as zip:
             zip.extractall(base_folder + subfolder)
     except zipfile.BadZipFile:
-        invalid_zips[url] = "Bad Zip File"
-        print(f"zip at {url} was invalid, skipping")
+        invalid_zips[zip_url] = "Bad Zip File"
+        print(f"zip at {zip_url} was invalid, skipping")
         return False, url
+    except FileExistsError:
+        return True, url
     
     # success?
     return True, url
 
-def download_zips_parallel(urls: str, base_folder="questions/answers/", max_workers=10):
+def download_zips_parallel(urls: list[list[str, str]], base_folder="questions/answers/", max_workers=10):
     results = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:

@@ -42,6 +42,8 @@ def get_levels(year: str, phase: str):
     """
     return nav_levels(year, phase)
 
+
+@nav_BP.route("/years/<string:year>/phases/<string:phase>/levels//problems", methods=["GET"], defaults={"level": ""})
 @nav_BP.route("/years/<string:year>/phases/<string:phase>/levels/<string:level>/problems", methods=["GET"])
 def get_problems(year: str, phase: str, level: str):
     """
@@ -61,7 +63,8 @@ def get_problems(year: str, phase: str, level: str):
     :>json array questoes: Array of avaliable problems
     """
     return nav_problems(year, phase, level)
-    
+
+@nav_BP.route("/years/<string:year>/phases/<string:phase>/levels//problems/<string:problem>", methods=["GET"], defaults={"level": ""})
 @nav_BP.route("/years/<string:year>/phases/<string:phase>/levels/<string:level>/problems/<string:problem>", methods=["GET"])
 def get_specific_problem(year: str, phase: str, level: str, problem: str):
     """
