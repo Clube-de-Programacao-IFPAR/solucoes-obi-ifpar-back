@@ -27,26 +27,16 @@ def update_urls(urls: list[str]): # updates to True
     with open("questions/answer_urls.json") as file:
         answer_data = json.load(file)
 
+    def mark_flag_as_downloaded(object, target_url):
+        if isinstance(object, dict):
+            for value in object.values():
+                if isinstance(value, list) and len(value) == 2 and value[0] == target_url:
+                    value[1] = True
+                else:
+                    mark_flag_as_downloaded(value, target_url)
+
     for url in urls:
-        # more regex yeeeeeeeeeeeeeeee
-        groups = re.search(r".+/(\d{4})(?:(cf)|f(\d))(b)?p([\djsu])_(.+).zip", url[0]).groups()
-
-        # group 1 is year
-        # group 3 is normal phase
-        # group 4 is b when it's split in A-B
-        # group 5 is level of exam
-        # group 6 is name of the question
-
-        # will use this to put in the dict
-
-        # as per specs in notion, [0] is url, [1] marks avaliability
-        data = [url, True]
-        
-        try:
-            answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")][(groups[3] or "") + (groups[4] or "")][groups[5]] = data
-        except KeyError:
-            list(answer_data[groups[0]][(groups[1] or "") + (groups[2] or "")].values())[0][groups[5]] = data
-            
+        mark_flag_as_downloaded(answer_data, url[0])
 
     # dump all the urls back in the file
     with open("questions/answer_urls.json", "w") as dump_file:
