@@ -4,3 +4,4 @@ beautifulsoup4
 psutil
 requests
 PyJWT
+python-dotenv
