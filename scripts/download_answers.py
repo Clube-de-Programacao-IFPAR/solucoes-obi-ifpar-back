@@ -66,17 +66,17 @@ def download_zip(url: list[str, str], base_folder="questions/answers/"):
                 if re.match("[^\w\d\-_]", info.filename): # match any character not in a-z, 0-9, - or _
                     invalid_zips[zip_url] = f"Bad File Name {info.filename}"
                     print(f"zip at {zip_url} contained invalid file name \"{info.filename}\", skipping")
-                    return False, url
+                    return False, zip_url
             zip.extractall(base_folder + subfolder)
     except zipfile.BadZipFile:
         invalid_zips[zip_url] = "Bad Zip File"
         print(f"zip at {zip_url} was invalid, skipping")
-        return False, url
+        return False, zip_url
     except FileExistsError:
-        return True, url
+        return True, zip_url
     
     # success?
-    return True, url
+    return True, zip_url
 
 def download_zips_parallel(urls: list[list[str, str]], base_folder="questions/answers/", max_workers=10):
     results = []
