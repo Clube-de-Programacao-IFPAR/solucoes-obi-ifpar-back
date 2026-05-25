@@ -1,3 +1,4 @@
+from os.path import abspath
 import json
 from ..errors.invalid_field import InvalidField
 from ..errors.missing_field import MissingField
@@ -13,7 +14,7 @@ def load_json():
         with open("./questions/answer_urls.json", "r", encoding="utf-8") as json_file:
             JSON_DATA = json.load(json_file)
     except FileNotFoundError:
-        raise FileNotFoundError("Missing url json file at 'src/questions/answer_urls.json', follow the README to fix")
+        raise FileNotFoundError(f"Missing url json file at '{abspath("./questions/answer_urls.json")}', follow the README to fix")
 
 def validate(year=None, phase=None, level=None, problem=None):
     load_json()
