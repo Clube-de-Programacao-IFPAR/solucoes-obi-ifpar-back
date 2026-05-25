@@ -71,7 +71,12 @@ def requires_admin(func):
             raise Unauthorized("Authorization header value is not a Bearer token")
         
         token = parts[1]
-        decoded: AuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"], verify=True)
+        try:
+            # signatures are auto-verified
+            decoded: AuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"])
+        except jwt.InvalidSignatureError:
+            raise Forbidden("JWT signature is invalid")
+
         
         if not decoded["role"] == "admin":
             raise Forbidden("Authorization JWT token is not admin")
