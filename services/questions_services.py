@@ -130,7 +130,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 if p.poll() is not None:
                     break # process has finished
                 elif time.perf_counter() - stime >= MAX_TIME:
-                    has_timemouted = True
+                    has_timeouted = True
                     break # timeout
                 try:
                     mem_info = ps_proc.memory_info()
@@ -146,7 +146,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 pass
             
-            if not has_timemouted:
+            if not has_timeouted:
                 stdout, stderr = p.communicate(timeout=10)
             else:
                 p.kill() # kill it >:(
