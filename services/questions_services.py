@@ -122,11 +122,15 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             ps_proc = psutil.Process(p.pid)
 
             peak_mem = -1
-
+            MAX_TIME = 10 # in seconds
+            has_timeouted = False
             # poll process every 10ms to check it's memory usage
             while True:
                 if p.poll() is not None:
                     break # process has finished
+                elif time.perf_counter() - stime >= MAX_TIME:
+                    has_timemouted = True
+                    break # timeout
                 try:
                     mem_info = ps_proc.memory_info()
                     peak_mem = max(peak_mem, mem_info.rss)
@@ -141,26 +145,36 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 pass
             
-            stdout, stderr = p.communicate(timeout=10)
+            if not has_timemouted:
+                stdout, stderr = p.communicate(timeout=10)
+            else:
+                p.kill() # kill it >:(
 
             total_time = time.perf_counter() - stime
 
-            # compare stdout with the output file
-
-            output = out.read_text().strip()
-
-            if stderr.strip() == "" and stdout.strip() == output:
-                result = {
-                    "success": True,
-                    "time": total_time,
-                    "memory": peak_mem / (1024 * 1024) # return in Mb
-                }
-            else:
+            if has_timeouted:
                 result = {
                     "success": False,
                     "time": total_time,
                     "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
+            else:
+                # compare stdout with the output file
+
+                output = out.read_text().strip()
+
+                if stderr.strip() == "" and stdout.strip() == output:
+                    result = {
+                        "success": True,
+                        "time": total_time,
+                        "memory": peak_mem / (1024 * 1024) # return in Mb
+                    }
+                else:
+                    result = {
+                        "success": False,
+                        "time": total_time,
+                        "memory": peak_mem / (1024 * 1024) # return in Mb
+                    }
         
         except subprocess.TimeoutExpired:
             result = {
