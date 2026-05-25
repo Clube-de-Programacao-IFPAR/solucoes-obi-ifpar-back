@@ -83,8 +83,8 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
             case ".java":
                 # get class/file name (both must be the same)
                 # f-ing javac, have to rename the file
-                os.rename(path, pathlib.Path(path) / f"../{filename.name}")
-                path = pathlib.Path(path) / f"../{filename.name}"
+                os.rename(path, pathlib.Path(path).parent / f"{filename.name}")
+                path = pathlib.Path(path).parent / f"{filename.name}"
                 class_name = filename.stem
                 subprocess.run(["javac", path], cwd=tempdir, check=True)
                 cmd = ["java", "-cp", tempdir, class_name]
