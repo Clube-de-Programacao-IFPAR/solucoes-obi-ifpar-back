@@ -10,6 +10,7 @@ import shutil
 from ..dtos.validate_questions_dto import ValidateQuestionDTO
 from ..errors.content_not_found import ContentNotFound
 from ..errors.not_implemented import NotSupported
+from ..errors.invalid_field import InvalidField
 
 def is_subtask_folder(name: str) -> bool:
     return bool(re.match(r"^(:?\d+|teste\d+|test\d+)", name))
@@ -193,6 +194,10 @@ def validate_answers(data: ValidateQuestionDTO):
     #level = data.level unneeded to get the folder name and path
     phase = data.phase
     name = data.name
+
+    # validate parameters
+    if re.match("[^\w\d\-_]", year) | re.match("[^\w\d\-_]", phase) | re.match("[^\w\d\-_]", phase):
+        raise InvalidField("Year, phase or name contained an invalid character")
 
     # re-assemble the folder name from the data
     folder_name = f"{year}_{phase}_{name}"
