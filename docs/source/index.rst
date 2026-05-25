@@ -29,11 +29,11 @@ dependencies at src/requirements.txt with pip:
 
    $ pip install -r docs/requirements.txt -r src/requirements.txt
 
-2. ``cd`` to src and run ``rm -r ../docs/build/html && sphinx-build ../docs/source/ ../docs/build/html``:
+2. ``cd`` to src and run ``rm -r ../docs/build/html && sphinx-build ../docs/source/ ../docs/build/html/``:
 
 .. code-block:: console
 
    $ cd src
-   $ rm -r ../docs/build/html && sphinx-build ../docs/source/ ../docs/build/
+   $ rm -r ../docs/build/html & sphinx-build ../docs/source/ ../docs/build/html/
 
 3. The docs will be avaliable at ``docs/build/html``, use your prefered browser to access the page at ``docs/build/html/index.html``.
