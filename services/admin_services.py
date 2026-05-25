@@ -12,6 +12,7 @@ from ..dtos.reset_password_dto import ResetPasswordDTO
 from ..errors.unauthorized import Unauthorized
 from ..errors.forbidden import Forbidden
 from ..errors.invalid_field import InvalidField
+from ..errors.missing_field import MissingField
 
 load_dotenv()
 
@@ -40,8 +41,12 @@ def login(data: LoginDTO):
     global jwt_count
     # returns a new token that authorizes admin for the given username and password
     # match username and password with the ones stored in the global variables
-    username = data["username"]
-    password = data["password"]
+    username = data.get("username")
+    if username is None:
+        raise MissingField("Missing \"username\" field in body")
+    password = data.get("password")
+    if password is None:
+        raise MissingField("Missing \"password\" field in body")
     
     if is_admin(username, password):
         # send a token to the user for auth
