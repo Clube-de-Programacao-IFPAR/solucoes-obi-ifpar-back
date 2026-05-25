@@ -12,7 +12,7 @@ def login():
     :status 200: Login was sucessful and auth token is returned
     :>json string token: JWT for admin authorization
     
-    :status 403: Incorrect username or password
+    :status 401: Incorrect username or password
     """
     data, status = admin_services.login(request.get_json())
     return data, status
