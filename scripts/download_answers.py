@@ -60,6 +60,13 @@ def download_zip(url: list[str, str], base_folder="questions/answers/"):
     zip_bytes = BytesIO(res.content)
     try:
         with zipfile.ZipFile(zip_bytes) as zip:
+            for info in zip.infolist():
+                # validate file names to avoid names like "../../path" or "/path"
+                # should only be worrying if the obi website gets hacked and this is targeted
+                if re.match("[^\w\d\-_]", info.filename): # match any character not in a-z, 0-9, - or _
+                    invalid_zips[zip_url] = f"Bad File Name {info.filename}"
+                    print(f"zip at {zip_url} contained invalid file name \"{info.filename}\", skipping")
+                    return False, url
             zip.extractall(base_folder + subfolder)
     except zipfile.BadZipFile:
         invalid_zips[zip_url] = "Bad Zip File"
