@@ -20,6 +20,10 @@ if JWT_SECRET_KEY is None:
     print("Include in the .env the ADMIN_JWT_SECRET_KEY")
     exit(1)
 
+if os.getenv("ADMIN_PASSWORD") is None:
+    print("Include in the .env the ADMIN_PASSWORD")
+    exit(1)
+
 # default for now just for testing
 admin_user = "admin"
 admin_pass = generate_password_hash(os.getenv("ADMIN_PASSWORD"))
