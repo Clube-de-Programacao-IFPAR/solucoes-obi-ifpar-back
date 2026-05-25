@@ -72,13 +72,13 @@ def parse_zips(document: BeautifulSoup, filter: re.Pattern = None) -> dict:
     for link in links:
         if filter is not None and not filter.match(link.attrs["href"]): continue
         title = link.find_previous("h4")
-        if title is None or not re.match("Nível.+", title.get_text()):
+        if title is None or not re.match(r"Nível.+", title.get_text()):
             title = link.find_previous("h3")
-        if title is None or not re.match("Nível.+", title.get_text()):
+        if title is None or not re.match(r"Nível.+", title.get_text()):
             title = link.find_previous("h2")
-        if title is None or not re.match("Nível.+", title.get_text()):
+        if title is None or not re.match(r"Nível.+", title.get_text()):
             title = link.find_previous("h1")
-        if title is None or not re.match("Nível.+", title.get_text()):
+        if title is None or not re.match(r"Nível.+", title.get_text()):
             title = None
         
         
