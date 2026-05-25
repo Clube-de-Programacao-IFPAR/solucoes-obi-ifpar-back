@@ -196,7 +196,7 @@ def validate_answers(data: ValidateQuestionDTO):
     name = data.name
 
     # validate parameters
-    if any(re.match(r"[^\w]", e) for e in [year, phase, name]):
+    if any(re.search(r"[^\w]", e) for e in [year, phase, name]):
         raise InvalidField("Year, phase or name contained an invalid character")
 
     # re-assemble the folder name from the data
