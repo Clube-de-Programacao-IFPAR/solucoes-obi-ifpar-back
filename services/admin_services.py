@@ -11,6 +11,7 @@ from ..dtos.auth_dto import AuthDTO
 from ..dtos.reset_password_dto import ResetPasswordDTO
 from ..errors.unauthorized import Unauthorized
 from ..errors.forbidden import Forbidden
+from ..errors.invalid_field import InvalidField
 
 load_dotenv()
 
@@ -76,6 +77,8 @@ def requires_admin(func):
             decoded: AuthDTO = jwt.decode(token, key=JWT_SECRET_KEY, algorithms=["HS256"])
         except jwt.InvalidSignatureError:
             raise Forbidden("JWT signature is invalid")
+        except jwt.PyJWKError:
+            raise InvalidField("JWT is invalid")
 
         
         if not decoded["role"] == "admin":
