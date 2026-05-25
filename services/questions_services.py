@@ -55,7 +55,7 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     cmd = None
     tempdir = tempfile.mkdtemp() # store compile artifacts
     cleanup = [
-        lambda: shutil.rmtree(path, ignore_errors=True)
+        lambda: shutil.rmtree(tempdir, ignore_errors=True)
     ]
 
     # write the code to a temporary file to pass as the code to run
