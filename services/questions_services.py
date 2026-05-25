@@ -111,10 +111,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
     for inp, out in tests:
         try:
+            inp_file = inp.open()
             stime = time.perf_counter()
             p = subprocess.Popen(
                 command,
-                stdin=inp.open(),
+                stdin=inp_file,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True
@@ -150,8 +151,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 stdout, stderr = p.communicate(timeout=10)
             else:
                 p.kill() # kill it >:(
+                p.wait(10) # wait for it to die
 
             total_time = time.perf_counter() - stime
+
+            inp_file.close()
 
             if has_timeouted:
                 result = {
