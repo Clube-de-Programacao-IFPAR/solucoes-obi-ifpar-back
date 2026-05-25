@@ -1,6 +1,7 @@
 from flask import request, Blueprint, jsonify
 from ..services.questions_services import validate_answers
 from ..dtos.validate_questions_dto import ValidateQuestionDTO
+from ..errors.missing_field import MissingField
 
 questions_BP = Blueprint("questions", __name__, url_prefix="/questions")
 
@@ -28,6 +29,9 @@ def validate_question():
         file and check output there
     """
     body = request.get_json()
+    
+    if not body:
+        raise MissingField("Missing JSON body")
 
     submit = ValidateQuestionDTO(
         body.get("year"),
