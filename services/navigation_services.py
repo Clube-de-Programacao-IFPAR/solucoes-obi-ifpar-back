@@ -1,8 +1,8 @@
 from os.path import abspath
 import json
-from ..errors.invalid_field import InvalidField
-from ..errors.missing_field import MissingField
-from ..errors.content_not_found import ContentNotFound
+from errors.invalid_field import InvalidField
+from errors.missing_field import MissingField
+from errors.content_not_found import ContentNotFound
 
 JSON_DATA = {}
 

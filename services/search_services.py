@@ -1,5 +1,5 @@
 import json
-from ..dtos.validate_search_dto import ValidateSearchDTO
+from dtos.validate_search_dto import ValidateSearchDTO
 
 JSON_DATA = {}
 
