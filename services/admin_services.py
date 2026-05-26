@@ -2,8 +2,8 @@ from dotenv import load_dotenv
 import os
 from flask import request
 import jwt
-from scripts import get_urls
-from scripts import download_answers
+# from scripts import get_urls
+# from scripts import download_answers
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from dtos.login_dto import LoginDTO
@@ -103,14 +103,14 @@ def reset_password(data: ResetPasswordDTO):
     
     return {}, 200
 
-@requires_admin
-def clear_urls():
-    get_urls.main()
+# @requires_admin
+# def clear_urls():
+#     get_urls.main()
     
-    return {}, 200
+#     return {}, 200
     
-@requires_admin
-def download_zips():
-    download_answers.main()
+# @requires_admin
+# def download_zips():
+#     download_answers.main()
     
-    return {}, 201
+#     return {}, 201
