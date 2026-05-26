@@ -1,0 +1,3 @@
+menor
+menor
+correto
