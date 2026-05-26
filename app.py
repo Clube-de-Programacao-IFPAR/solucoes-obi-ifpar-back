@@ -2,8 +2,8 @@ from dotenv import load_dotenv
 import os
 from flask import Flask
 from flask_cors import CORS
-from .routes import register_routes
-from .errors import register_error_handlers
+from routes import register_routes
+from errors import register_error_handlers
 
 load_dotenv()
 
