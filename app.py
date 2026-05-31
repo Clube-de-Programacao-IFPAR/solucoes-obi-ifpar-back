@@ -8,7 +8,7 @@ from errors import register_error_handlers
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5000", "http://localhost:5173", "https://g-aleixo.github.io", "https://solucoes-obi-ifpar.onrender.com"])
+CORS(app, origins=["http://localhost:5000", "http://localhost:5173", "https://g-aleixo.github.io", "https://clubeppar.github.io", "https://solucoes-obi-ifpar.onrender.com"])
 
 app.secret_key = os.getenv("OBI_FLASK_SECRET")
 
