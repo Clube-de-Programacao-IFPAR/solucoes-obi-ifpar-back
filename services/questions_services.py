@@ -160,6 +160,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             if has_timeouted:
                 result = {
                     "success": False,
+                    "error": "",
                     "time": total_time,
                     "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
@@ -171,12 +172,21 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 if stderr.strip() == "" and stdout.strip() == output:
                     result = {
                         "success": True,
+                        "error": "",
+                        "time": total_time,
+                        "memory": peak_mem / (1024 * 1024) # return in Mb
+                    }
+                elif stderr.strip() != "":
+                    result = {
+                        "success": False,
+                        "error": stderr,
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
                 else:
                     result = {
                         "success": False,
+                        "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
@@ -184,6 +194,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
         except subprocess.TimeoutExpired:
             result = {
                 "success": False,
+                "error": "",
                 "time": -1,
                 "memory": -1
             }
