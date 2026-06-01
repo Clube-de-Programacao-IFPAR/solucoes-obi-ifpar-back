@@ -1,5 +1,5 @@
 from flask import Blueprint
-from ..services.navigation_services import nav_years, nav_phases, nav_levels, nav_problems, nav_problem
+from services.navigation_services import nav_years, nav_phases, nav_levels, nav_problems, nav_problem
 
 nav_BP = Blueprint("nav", __name__, url_prefix="/nav")
 

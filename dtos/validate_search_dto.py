@@ -1,5 +1,5 @@
-from ..errors.missing_field import MissingField
-from ..errors.invalid_field import InvalidField
+from errors.missing_field import MissingField
+from errors.invalid_field import InvalidField
 
 class ValidateSearchDTO:
     def __init__(

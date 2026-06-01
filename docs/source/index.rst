@@ -23,17 +23,16 @@ How to build the docs
 ---------------------
 
 1. Install the Sphinx dependencies at docs/requirements.txt and the project
-dependencies at src/requirements.txt with pip:
+dependencies at requirements.txt with pip:
 
 .. code-block:: console
 
-   $ pip install -r docs/requirements.txt -r src/requirements.txt
+   $ pip install -r docs/requirements.txt -r requirements.txt
 
-2. ``cd`` to src and run ``rm -r ../docs/build/html && sphinx-build ../docs/source/ ../docs/build/html/``:
+2. run ``rm -r docs/build/html & sphinx-build docs/source/ docs/build/html/``:
 
 .. code-block:: console
 
-   $ cd src
-   $ rm -r ../docs/build/html & sphinx-build ../docs/source/ ../docs/build/html/
+   $ rm -r docs/build/html & sphinx-build docs/source/ docs/build/html/
 
 3. The docs will be avaliable at ``docs/build/html``, use your prefered browser to access the page at ``docs/build/html/index.html``.

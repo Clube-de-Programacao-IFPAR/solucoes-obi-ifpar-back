@@ -1,6 +1,6 @@
 Question validation API
 =======================
 
-.. autoflask:: src.app:app
+.. autoflask:: app:app
     :include-empty-docstring:
     :blueprints: questions

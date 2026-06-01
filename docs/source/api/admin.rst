@@ -8,7 +8,7 @@ the server.
 
 All admin routes(except :http:post:`/admin/login`) require an authorization token given by :http:post:`/admin/login` in the :http:header:`Authorization` header as ``Bearer <token>``
 
-.. autoflask:: src.app:app
+.. autoflask:: app:app
     :include-empty-docstring:
     :blueprints: admin
     

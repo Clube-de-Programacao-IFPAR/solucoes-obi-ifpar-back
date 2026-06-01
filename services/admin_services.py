@@ -2,17 +2,17 @@ from dotenv import load_dotenv
 import os
 from flask import request
 import jwt
-from ..scripts import get_urls
-from ..scripts import download_answers
+from scripts import get_urls
+from scripts import download_answers
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
-from ..dtos.login_dto import LoginDTO
-from ..dtos.auth_dto import AuthDTO
-from ..dtos.reset_password_dto import ResetPasswordDTO
-from ..errors.unauthorized import Unauthorized
-from ..errors.forbidden import Forbidden
-from ..errors.invalid_field import InvalidField
-from ..errors.missing_field import MissingField
+from dtos.login_dto import LoginDTO
+from dtos.auth_dto import AuthDTO
+from dtos.reset_password_dto import ResetPasswordDTO
+from errors.unauthorized import Unauthorized
+from errors.forbidden import Forbidden
+from errors.invalid_field import InvalidField
+from errors.missing_field import MissingField
 
 load_dotenv()
 
