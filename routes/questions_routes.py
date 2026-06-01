@@ -1,7 +1,7 @@
 from flask import request, Blueprint, jsonify
-from ..services.questions_services import validate_answers
-from ..dtos.validate_questions_dto import ValidateQuestionDTO
-from ..errors.missing_field import MissingField
+from services.questions_services import validate_answers
+from dtos.validate_questions_dto import ValidateQuestionDTO
+from errors.missing_field import MissingField
 
 questions_BP = Blueprint("questions", __name__, url_prefix="/questions")
 

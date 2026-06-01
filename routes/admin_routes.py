@@ -1,5 +1,5 @@
 from flask import request, Blueprint 
-from ..services import admin_services
+from services import admin_services
 
 admin_BP = Blueprint("admin", __name__, url_prefix="/admin")
 

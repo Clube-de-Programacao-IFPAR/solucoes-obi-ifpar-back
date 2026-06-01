@@ -7,10 +7,10 @@ import time
 import psutil
 import shutil
 
-from ..dtos.validate_questions_dto import ValidateQuestionDTO
-from ..errors.content_not_found import ContentNotFound
-from ..errors.not_implemented import NotSupported
-from ..errors.invalid_field import InvalidField
+from dtos.validate_questions_dto import ValidateQuestionDTO
+from errors.content_not_found import ContentNotFound
+from errors.not_implemented import NotSupported
+from errors.invalid_field import InvalidField
 
 def is_subtask_folder(name: str) -> bool:
     return bool(re.match(r"^(:?\d+|teste\d+|test\d+)", name))

@@ -1,6 +1,6 @@
 from flask import request, Blueprint, jsonify
-from ..services.search_services import search
-from ..dtos.validate_search_dto import ValidateSearchDTO
+from services.search_services import search
+from dtos.validate_search_dto import ValidateSearchDTO
 
 search_BP = Blueprint("search", __name__, url_prefix="/search")
 
