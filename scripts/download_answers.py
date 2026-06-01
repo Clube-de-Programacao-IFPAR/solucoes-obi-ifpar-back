@@ -12,14 +12,20 @@ AGENT_NAME = f"ANSWER-LINK-DOWNLOADER/{VERSION}"
 
 def get_filtered_urls(data: dict[dict[dict[dict[dict]]]]):
     filtered = []
+    folderNames = set()
     for year_key, year in data.items():
         for phase_key, phase in year.items():
             for level_key, level in phase.items():
                 level: dict = level
                 for name, info in level.items():
                     if not info[1]:
+                        folderName = f"{year_key}_{phase_key}_{name}"
+                        if folderName in folderNames: 
+                            filtered.append(((info[0], True), folderName))
+                            continue
                         # url has not been downloaded, append to download later
-                        filtered.append((info[0], f"{year_key}_{phase_key}_{name}"))
+                        filtered.append((info[0], folderName))
+                        folderNames.add(folderName)
     
     return filtered
 
@@ -51,6 +57,10 @@ def update_urls(urls: list[str]): # updates to True
 
 def download_zip(url: list[str, str], base_folder="questions/answers/"):
     zip_url, name = url[0], url[1]
+    
+    if isinstance(zip_url, (tuple, list)):
+        return True, zip_url
+    
     print(f"downloading zip from url {url}")
     # get zip name from the url to use as a folder name
     subfolder = name
