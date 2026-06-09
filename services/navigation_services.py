@@ -74,7 +74,9 @@ def nav_levels(year: str, phase: str) -> tuple[dict[str, str | list[str]], int]:
 def nav_problems(year: str, phase: str, level: str) -> tuple[dict[str, str | list[str]], int]:
     validate(year, phase, level)
 
-    answer_url_problems = list(JSON_DATA[year][phase][level].keys())
+    answer_url_problems = [ 
+        (name, data[1]) 
+        for name, data in JSON_DATA[year][phase][level].items() ]
 
     return {
         "ano": year,
