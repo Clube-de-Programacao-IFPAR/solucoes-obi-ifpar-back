@@ -6,6 +6,8 @@ O objetivo do projeto é criar uma plataforma web onde estudantes possam **resol
 
 A ideia surgiu a partir da necessidade de uma ferramenta que permita aos alunos praticar problemas da OBI e naveguem pela plataforma com facilidade.
 
+Este é o **primeiro projeto oficial do clube**.
+
 ## 📍 Objetivo
 
 Criar uma plataforma que permita aos estudantes:
@@ -20,17 +22,6 @@ Criar uma plataforma que permita aos estudantes:
 
 Além disso, o projeto também funciona como **um ambiente de aprendizado colaborativo**, permitindo que estudantes participem do desenvolvimento de uma aplicação real.
 
-## 📖 Sobre o Clube de Programação IFPAR
-
-O Clube de Programação é uma iniciativa estudantil criada no campus com o objetivo de:
-
-- incentivar a participação em olimpíadas de programação
-- apoiar estudantes no aprendizado de algoritmos e programação
-- desenvolver projetos colaborativos
-- criar uma comunidade ativa de programadores no campus
-
-Este é o **primeiro projeto oficial do clube**.
-
 ## 💡 Sobre a OBI
 
 A [**Olimpíada Brasileira de Informática (OBI)**](https://olimpiada.ic.unicamp.br/) é uma competição nacional que busca estimular o estudo de algoritmos, lógica e programação entre estudantes brasileiros.
@@ -43,13 +34,6 @@ Este projeto busca facilitar o treinamento para a OBI reunindo diversos problema
 
 O projeto utiliza tecnologias modernas de desenvolvimento web.
 
-### Frontend
-
-- React
-- Vite
-- React Router DOM
-- Tailwind CSS
-
 ### Backend
 
 - Python
@@ -60,7 +44,6 @@ O projeto utiliza tecnologias modernas de desenvolvimento web.
 - Git
 - Git Flow
 - GitHub
-- gh-pages
 
 ### Documentação
 
