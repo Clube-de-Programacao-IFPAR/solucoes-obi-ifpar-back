@@ -10,7 +10,7 @@ def search_question():
     :<json string year: Match with exactly the given year
     :<json string phase: Match with exactly the given phase
     :<json string level: Match with exactly the given level
-    :<json string problem: Match with exactly the given problem
+    :<json string problem: Match with start of the given problem
 
     :status 200: Returns a nested dictionary of the data that match the given parameters.
                  Empty data means that there was no match for a term
