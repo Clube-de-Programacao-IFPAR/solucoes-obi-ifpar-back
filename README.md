@@ -39,15 +39,15 @@ O projeto utiliza tecnologias modernas de desenvolvimento web.
 - Python
 - Flask
 
+### Documentação
+
+- Sphinx
+
 ### Ferramentas
 
 - Git
 - Git Flow
 - GitHub
-
-### Documentação
-
-- Sphinx
 
 ## 🔧 Como rodar o backend do projeto
 
@@ -77,7 +77,7 @@ Atualize os dados das questões:
 python scripts/get_urls.py
 ```
 
-Baixe os gabaritos de todas as questões (opcional):
+Baixe os gabaritos de todas as questões (opcional - necessário apenas se for usar a função de submissão):
 ```bash
 python scripts/download_answers.py
 ```
@@ -89,23 +89,23 @@ flask --app app.py run
 ```
 
 O backend estará disponível em:
-```
+```bash
 http://127.0.0.1:5000
 ```
 
 ## Documentação
 
-Você pode acessar a documentação oficial compilando ela com os dados do proprio projeto.
+Você pode acessar a documentação oficial compilando ela com os dados do proprio.
 
 ### Compilar a documentação
-1. Baixe as dependências do Sphinx em `docs/requirements.txt` e as dependências do projeto em `requirements.txt` com o `pip`:
-``` console
-   $ pip install -r docs/requirements.txt -r requirements.txt
+1. Baixe as dependências do Sphinx em `docs/requirements.txt` (deve ter as dependências do projeto já instaladas também):
+```bash
+pip install -r docs/requirements.txt
 ```
 
 2. Rode o comando ``rm -r docs/build/html && sphinx-build docs/source/ docs/build/html``:
-``` console
-   $ rm -r docs/build/html && sphinx-build docs/source/ docs/build/html
+```bash
+rm -r docs/build/html && sphinx-build docs/source/ docs/build/html
 ```
 
 3. A documentação estara disponível em `docs/build/html/`, use seu navegador preferido para acessar o arquivo `docs/build/html/index.html`.
@@ -124,23 +124,6 @@ Os participantes podem contribuir de diversas formas:
 - organização do projeto
 
 Mesmo quem ainda está aprendendo pode participar acompanhando o desenvolvimento e contribuindo gradualmente.
-
-### 👨‍💻 Participantes
-
-- [Alanderson Lima](https://github.com/Alanderson-LS) — Estudante Aprendiz
-- [Brasilicio Henrique](https://github.com/brasilicioh) — Coordenador e Dev Fullstack
-- [Bruno Gustavo](https://github.com/brunoficial) — Dev Backend
-- [Cauã de Lima](https://github.com/CauaLima18) — Dev Backend
-- [Douglas Ryan](https://github.com/Douglas-Mesquita) — Estudante Aprendiz
-- [Emanuele Rafaela](https://github.com/ManulSilva) — Estudante Aprendiz
-- [Gabriel Nascimento](https://github.com/GGGabriell) — Estudante Aprendiz
-- [Guilherme Aleixo](https://github.com/G-aleixo) — Dev Backend
-- [Gustavo Andrey](https://github.com/GustavoAndreyIF) — Dev Frontend
-- [Júlio César](https://github.com/JCOAlves) — Dev Fullstack
-- [Kaio Henrique](https://github.com/pc123456789n) — Dev Frontend
-- [Leonardo Kauffman](https://github.com/Leonardo1234321) — Dev Backend
-- [Rita de Cássia](https://github.com/Ritinha-tari) — Estudante Aprendiz
-- [Thiago Freitas](https://github.com/thifre09) — Dev Frontend
 
 ## ⚙️ Status do projeto
 
