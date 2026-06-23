@@ -60,7 +60,7 @@ def main():
     json_data = load_existing_data()
 
     years = select_new_years(json_years=json_data,web_scraped_years=web_scraped_years)
-    pprint(f"Anos encontrados: {", ".join(years)}")
+    pprint(f'Anos encontrados: {", ".join(years)}')
 
 
     # aproveitando a lógica de get_urls
