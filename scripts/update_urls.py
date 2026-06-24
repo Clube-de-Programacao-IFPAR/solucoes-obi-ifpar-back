@@ -4,14 +4,10 @@ from pathlib import Path
 from collections import defaultdict
 from pprint import pprint
 # Importando as funções do get_urls script 
-from get_urls import (
-    get_links,
-    get_links_parallel,
-    get_zips_parallel,
-    parse_urls,
-    BASE_URL,
-    AGENT_NAME
-)
+try:
+    from scripts import get_urls
+except ModuleNotFoundError:
+    import get_urls
 
 JSON_PATH = Path("questions/answer_urls.json")
 
@@ -56,7 +52,7 @@ def merge_data(existing: dict, new_data: dict) -> dict:
     return merged
 
 def main():
-    web_scraped_years = get_links(r"/passadas/", re.compile(r"^/passadas/OBI.+")) 
+    web_scraped_years = get_urls.get_links(r"/passadas/", re.compile(r"^/passadas/OBI.+")) 
     json_data = load_existing_data()
 
     years = select_new_years(json_years=json_data,web_scraped_years=web_scraped_years)
@@ -64,11 +60,11 @@ def main():
 
 
     # aproveitando a lógica de get_urls
-    exams = get_links_parallel(years, re.compile(r"^/passadas/OBI\d{4}.+programacao.+"))
+    exams = get_urls.get_links_parallel(years, re.compile(r"^/passadas/OBI\d{4}.+programacao.+"))
     
-    answer_urls = get_zips_parallel(exams, re.compile(r".+\.zip"))
+    answer_urls = get_urls.get_zips_parallel(exams, re.compile(r".+\.zip"))
 
-    new_parsed_data = parse_urls(answer_urls)
+    new_parsed_data = get_urls.parse_urls(answer_urls)
 
     # Junta os dois Jsons em um só
     final_data = merge_data(json_data, new_parsed_data)
