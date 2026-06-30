@@ -55,6 +55,9 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     _, ext = os.path.splitext(filename)
     cmd = None
     tempdir = tempfile.mkdtemp() # store compile artifacts
+
+    compile_error = None
+
     cleanup = [
         lambda: shutil.rmtree(tempdir, ignore_errors=True)
     ]
@@ -67,38 +70,46 @@ def compile_code(filename: pathlib.Path, file: str) -> tuple[list[str] | None, l
     try:
         match ext:
             case ".py":
-                cmd = ["python", path]
+                result = subprocess.run(["python", "-m", "py_compile", path], capture_output=True, text=True)
+                if result.returncode != 0:
+                    compile_error = (result.stderr.strip() or result.stdout.strip())
+                else:
+                    cmd = ["python", path]
             case ".js":
                 cmd = ["node", path]
             case ".c":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
-                subprocess.run(["gcc", "-lm", "-O2", "-static", "-x", "c", path, "-o", exe], check=True)
-                cmd = [exe]
+                result = subprocess.run(["gcc", "-lm", "-O2", "-static", "-x", "c", path, "-o", exe], capture_output=True, text=True)
+                if result.returncode != 0:
+                    compile_error = (result.stderr.strip() or result.stdout.strip())
+                else:
+                    cmd = [exe]
             case ".cpp" | ".c++" | ".cc":
                 # compile the file
                 exe = os.path.join(tempdir, "a.out")
-                subprocess.run(["g++", "-std=gnu++20", "-O2", "-static", "-x", "c++", path, "-o", exe], check=True)
-                cmd = [exe]
+                result = subprocess.run(["g++", "-std=gnu++20", "-O2", "-static", "-x", "c++", path, "-o", exe], capture_output=True, text=True)
+                if result.returncode != 0:
+                    compile_error = (result.stderr.strip() or result.stdout.strip())
+                else:
+                    cmd = [exe]
             case ".java":
                 # get class/file name (both must be the same)
                 # f-ing javac, have to rename the file
                 os.rename(path, pathlib.Path(path).parent / f"{filename.name}")
                 path = pathlib.Path(path).parent / f"{filename.name}"
                 class_name = filename.stem
-                subprocess.run(["javac", path], cwd=tempdir, check=True)
-                cmd = ["java", "-cp", tempdir, class_name]
-            
+                result = subprocess.run(["javac", path], cwd=tempdir, capture_output=True, text=True)
+                if result.returncode != 0:
+                    compile_error = (result.stderr.strip() or result.stdout.strip())
+                else:
+                    cmd = ["java", "-cp", tempdir, class_name]
+            case _:
+                compile_error = "Unsupported file extension."
     except Exception as e:
-        print(f"exception when getting command: {e}")
-        print("running cleanup")
-        for command in cleanup:
-            if callable(command):
-                command()
-            else:
-                subprocess.call(command)
+        compile_error = str(e)
 
-    return cmd, cleanup
+    return cmd, cleanup, compile_error
 
 def validate_subtask(path: pathlib.Path, command: list[str]):
     # this folder should contain a list of tasks to compare the file against
@@ -149,6 +160,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             
             if not has_timeouted:
                 stdout, stderr = p.communicate(timeout=10)
+                stdout = stdout.strip()
+                stderr = stderr.strip()
             else:
                 p.kill() # kill it >:(
                 p.wait(10) # wait for it to die
@@ -169,14 +182,14 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
                 output = out.read_text().strip()
 
-                if stderr.strip() == "" and stdout.strip() == output:
+                if stderr == "" and stdout == output:
                     result = {
                         "success": True,
                         "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
-                elif stderr.strip() != "":
+                elif stderr != "":
                     result = {
                         "success": False,
                         "error": stderr,
@@ -268,23 +281,24 @@ def validate_answers(data: ValidateQuestionDTO):
 
     # compile/make the command to run the code properly
     
-    if ((result := compile_code(pathlib.Path(data.filename), data.file)) is not None
-        and result[0] is not None):
-        cmd, cleanup = result
+    cmd, cleanup, compile_error = compile_code(pathlib.Path(data.filename), data.file)
 
-        for i, subtask in enumerate(subtasks):
-            response["subtasks"][i] = validate_subtask(subtask, cmd)
-        
-        # cleanup tmp dirs and files
+    if compile_error is not None:
         for command in cleanup:
             if callable(command):
                 command()
             else:
                 subprocess.call(command)
-    else:
-        # no command to run the code was returned
-        # can't fulfill request
-        raise NotSupported("File extension not supported")
+        return {"error": compile_error}, 400
+
+    for i, subtask in enumerate(subtasks):
+        response["subtasks"][i] = validate_subtask(subtask, cmd)
+
+    for command in cleanup:
+        if callable(command):
+            command()
+        else:
+            subprocess.call(command)
 
     # add in the max time and max memory
     response["max_time"] = max(test["time"] for sub in response["subtasks"] for test in sub["tests"])
