@@ -4,6 +4,7 @@ from flask import request
 import jwt
 from scripts import get_urls
 from scripts import download_answers
+from scripts import update_urls
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from dtos.login_dto import LoginDTO
@@ -113,4 +114,10 @@ def clear_urls():
 def download_zips():
     download_answers.main()
     
+    return {}, 201
+
+@requires_admin
+def modernize_urls():
+    update_urls.main()
+
     return {}, 201

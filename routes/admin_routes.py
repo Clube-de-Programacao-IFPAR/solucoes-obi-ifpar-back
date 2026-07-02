@@ -63,3 +63,18 @@ def download_zips():
     """
     data, status = admin_services.download_zips()
     return data, status
+
+@admin_BP.route("/update_urls", methods=["POST"])
+def modernize_urls():
+    """
+    Gets all the answer urls from the OBI website automatically that haven't 
+    been grabbed yet. Set their flags to 'false', if there are any
+
+    :reqheader Authorization: Bearer token given by :http:post:`/admin/login`
+
+    :status 201: Script ran sucessfully
+    :status 403: Invalid auth token or was unauthorized
+    """
+
+    data, status = admin_services.modernize_urls()
+    return data, status
