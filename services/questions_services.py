@@ -115,9 +115,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     # this folder should contain a list of tasks to compare the file against
     # the current code assumes that it goes in the structure past like 2017 idk
     tests = pair_tests(path)
-    results = {
-        "tests": []
-    }
+    correct_tests = 0
+
+    #  This variable will be later used as an attribute for results
+    tests_attribute = []
+
 
 
     # We'll have four possible success results for all tests 
@@ -210,6 +212,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 output = out.read_text().strip()
 
                 if stderr == "" and stdout == output:
+                    correct_tests += 1
+
                     result = {
                         "success": 1,
                         "error": "",
@@ -239,8 +243,14 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 "memory": -1
             }
 
-        results["tests"].append(result)
-    
+        tests_attribute.append(result)
+
+    results = {
+      "total_tests": len(tests),
+       "correct_tests": correct_tests,
+       "tests": tests_attribute
+    }
+
     return results
 
 
