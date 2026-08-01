@@ -120,6 +120,16 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     }
 
 
+    # We'll have four possible success results for all tests 
+    # Priorly, success was a boolean variable which only indicated if the test was successful
+    # Now, we'll send an integer indicating or success, ow which kind of failure happened during the process 
+    # All possible results are: 
+    # 0 -> Error (Outputs do not correspond)
+    # 1 -> Success
+    # 2 -> TLE (Time Limit exceeded)
+    # 3 -> MLE (Memory limit exceeded)
+    # 4 -> RTE (Run Time Error) 
+
     for inp, out in tests:
         try:
             inp_file = inp.open()
@@ -135,8 +145,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             ps_proc = psutil.Process(p.pid)
 
             peak_mem = -1
-            MAX_TIME = 10 # in seconds
+            MAX_TIME = 5 # in seconds
+            MAX_MEMORY = 512 * 1024 * 1024
+
             has_timeouted = False
+            has_exceeded_max_memory = False
             # poll process every 10ms to check it's memory usage
             while True:
                 if p.poll() is not None:
@@ -147,6 +160,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 try:
                     mem_info = ps_proc.memory_info()
                     peak_mem = max(peak_mem, mem_info.rss)
+
+                    if peak_mem > MAX_MEMORY: 
+                        has_exceeded_max_memory = True 
+                        break 
+
                 except (psutil.NoSuchProcess, psutil.AccessDenied):
                     break
                 time.sleep(0.010)
@@ -172,11 +190,20 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             if has_timeouted:
                 result = {
-                    "success": False,
+                    "success": 2,
                     "error": "",
                     "time": total_time,
                     "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
+
+            elif has_exceeded_max_memory:
+                result = {
+                    "success": 3,
+                    "error": "",
+                    "time": total_time, 
+                    "memory": peak_mem
+                }
+
             else:
                 # compare stdout with the output file
 
@@ -184,21 +211,21 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
                 if stderr == "" and stdout == output:
                     result = {
-                        "success": True,
+                        "success": 1,
                         "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
                 elif stderr != "":
                     result = {
-                        "success": False,
+                        "success": 4,
                         "error": stderr,
                         "time": total_time,
-                        "memory": peak_mem / (1024 * 1024) # return in Mb
+                        "memory": peak_mem  / (1024 * 1024) # return in Mb
                     }
                 else:
                     result = {
-                        "success": False,
+                        "success": 0,
                         "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
@@ -206,7 +233,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
         
         except subprocess.TimeoutExpired:
             result = {
-                "success": False,
+                "success": 2,
                 "error": "",
                 "time": -1,
                 "memory": -1
@@ -268,7 +295,7 @@ def validate_answers(data: ValidateQuestionDTO):
     #     { # subtask 0 indexed
     #       "tests": [ # also 0 indexed
     #         {
-    #         "success": bool,
+    #         "success": int,
     #         "time": float,
     #         "memory": int
     #         }
