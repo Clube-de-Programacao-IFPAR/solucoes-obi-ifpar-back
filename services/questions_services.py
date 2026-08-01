@@ -294,7 +294,11 @@ def validate_answers(data: ValidateQuestionDTO):
          os.listdir(folder_path))
     ))
 
+    correct_subtasks = 0 
+
     response = {
+        "total_subtasks": len(subtasks),
+        "correct_subtasks": correct_subtasks,
         "subtasks": [None for _ in range(len(subtasks))],
         "max_time": float("inf"),
         "max_memory": -1
@@ -305,6 +309,8 @@ def validate_answers(data: ValidateQuestionDTO):
     #     { # subtask 0 indexed
     #       "tests": [ # also 0 indexed
     #         {
+    #          "total_tests": int
+    #          "correct_tests": int 
     #         "success": int,
     #         "time": float,
     #         "memory": int
@@ -330,6 +336,11 @@ def validate_answers(data: ValidateQuestionDTO):
 
     for i, subtask in enumerate(subtasks):
         response["subtasks"][i] = validate_subtask(subtask, cmd)
+        
+        if response["subtasks"][i]["total_tests"] == response["subtasks"][i]["correct_tests"]:
+            correct_subtasks += 1
+
+    response["correct_subtasks"] = correct_subtasks
 
     for command in cleanup:
         if callable(command):
