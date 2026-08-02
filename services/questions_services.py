@@ -115,10 +115,19 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     # this folder should contain a list of tasks to compare the file against
     # the current code assumes that it goes in the structure past like 2017 idk
     tests = pair_tests(path)
-    results = {
-        "tests": []
-    }
+    correct_tests = 0
 
+    #  This variable will be later used as an attribute for results
+    tests_attribute = []
+
+
+    # We'll have four possible integer values indicating the execution status in the "success" attribute 
+    # All possible results are: 
+    # 0 -> Error (Outputs do not correspond)
+    # 1 -> Success
+    # 2 -> TLE (Time Limit exceeded)
+    # 3 -> MLE (Memory limit exceeded)
+    # 4 -> RTE (Run Time Error) 
 
     for inp, out in tests:
         try:
@@ -135,8 +144,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
             ps_proc = psutil.Process(p.pid)
 
             peak_mem = -1
-            MAX_TIME = 10 # in seconds
+            MAX_TIME = 5 # in seconds
+            MAX_MEMORY = 512 * 1024 * 1024
+
             has_timeouted = False
+            has_exceeded_max_memory = False
             # poll process every 10ms to check it's memory usage
             while True:
                 if p.poll() is not None:
@@ -147,6 +159,11 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 try:
                     mem_info = ps_proc.memory_info()
                     peak_mem = max(peak_mem, mem_info.rss)
+
+                    if peak_mem > MAX_MEMORY: 
+                        has_exceeded_max_memory = True 
+                        break 
+
                 except (psutil.NoSuchProcess, psutil.AccessDenied):
                     break
                 time.sleep(0.010)
@@ -172,33 +189,44 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             if has_timeouted:
                 result = {
-                    "success": False,
+                    "success": 2,
                     "error": "",
                     "time": total_time,
                     "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
+
+            elif has_exceeded_max_memory:
+                result = {
+                    "success": 3,
+                    "error": "",
+                    "time": total_time, 
+                    "memory": peak_mem / (1024 * 1024) # return in Mb
+                }
+
             else:
                 # compare stdout with the output file
 
                 output = out.read_text().strip()
 
                 if stderr == "" and stdout == output:
+                    correct_tests += 1
+
                     result = {
-                        "success": True,
+                        "success": 1,
                         "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
                 elif stderr != "":
                     result = {
-                        "success": False,
+                        "success": 4,
                         "error": stderr,
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
                 else:
                     result = {
-                        "success": False,
+                        "success": 0,
                         "error": "",
                         "time": total_time,
                         "memory": peak_mem / (1024 * 1024) # return in Mb
@@ -206,14 +234,20 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
         
         except subprocess.TimeoutExpired:
             result = {
-                "success": False,
+                "success": 2,
                 "error": "",
                 "time": -1,
                 "memory": -1
             }
 
-        results["tests"].append(result)
-    
+        tests_attribute.append(result)
+
+    results = {
+      "total_tests": len(tests),
+       "correct_tests": correct_tests,
+       "tests": tests_attribute
+    }
+
     return results
 
 
@@ -257,7 +291,11 @@ def validate_answers(data: ValidateQuestionDTO):
          os.listdir(folder_path))
     ))
 
+    correct_subtasks = 0 
+
     response = {
+        "total_subtasks": len(subtasks),
+        "correct_subtasks": correct_subtasks,
         "subtasks": [None for _ in range(len(subtasks))],
         "max_time": float("inf"),
         "max_memory": -1
@@ -268,7 +306,9 @@ def validate_answers(data: ValidateQuestionDTO):
     #     { # subtask 0 indexed
     #       "tests": [ # also 0 indexed
     #         {
-    #         "success": bool,
+    #          "total_tests": int
+    #          "correct_tests": int 
+    #         "success": int,
     #         "time": float,
     #         "memory": int
     #         }
@@ -293,6 +333,11 @@ def validate_answers(data: ValidateQuestionDTO):
 
     for i, subtask in enumerate(subtasks):
         response["subtasks"][i] = validate_subtask(subtask, cmd)
+        
+        if response["subtasks"][i]["total_tests"] == response["subtasks"][i]["correct_tests"]:
+            correct_subtasks += 1
+
+    response["correct_subtasks"] = correct_subtasks
 
     for command in cleanup:
         if callable(command):
