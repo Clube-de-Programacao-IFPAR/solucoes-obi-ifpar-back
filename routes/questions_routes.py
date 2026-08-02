@@ -19,8 +19,16 @@ def validate_question():
                         solve the question
     
     :status 200: Returns the data of the tests applied to the file given,
-                 listing time, memory usage and whether it was correct
+                 listing time, memory usage,  test statistics and an integer 
+                 indicating the execution status.
 
+             Success codes:
+             - 0: Wrong Answer
+             - 1: Success
+             - 2: TLE (Time Limit Exceeded)
+             - 3: MLE (Memory Limit Exceeded)
+             - 4: RTE (Runtime Error)
+'
     :status 404: Question answer folder was not found
     :status 501: File extension is not supported by the server
 
