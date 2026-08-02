@@ -121,10 +121,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     tests_attribute = []
 
 
-
-    # We'll have four possible success results for all tests 
-    # Priorly, success was a boolean variable which only indicated if the test was successful
-    # Now, we'll send an integer indicating or success, ow which kind of failure happened during the process 
+    # We'll have four possible integer values indicating the execution status in the "success" attribute 
     # All possible results are: 
     # 0 -> Error (Outputs do not correspond)
     # 1 -> Success
@@ -203,7 +200,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     "success": 3,
                     "error": "",
                     "time": total_time, 
-                    "memory": peak_mem
+                    "memory": peak_mem / (1024 * 1024) # return in Mb
                 }
 
             else:
@@ -225,7 +222,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                         "success": 4,
                         "error": stderr,
                         "time": total_time,
-                        "memory": peak_mem  / (1024 * 1024) # return in Mb
+                        "memory": peak_mem / (1024 * 1024) # return in Mb
                     }
                 else:
                     result = {
