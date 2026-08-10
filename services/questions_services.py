@@ -189,6 +189,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             if has_timeouted:
                 result = {
+                    "input": inp.read_text(),
+                    "correct_output": "",
+                    "user_output": "",
                     "success": 2,
                     "error": "",
                     "time": total_time,
@@ -197,6 +200,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             elif has_exceeded_max_memory:
                 result = {
+                    "input": inp.read_text(),
+                    "correct_output": "",
+                    "user_output": "",
                     "success": 3,
                     "error": "",
                     "time": total_time, 
@@ -212,6 +218,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     correct_tests += 1
 
                     result = {
+                        "input": inp.read_text(),
+                        "correct_output": output,
+                        "user_output": stdout,
                         "success": 1,
                         "error": "",
                         "time": total_time,
@@ -219,6 +228,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     }
                 elif stderr != "":
                     result = {
+                        "input": inp.read_text(),
+                        "correct_output": "",
+                        "user_output": "",
                         "success": 4,
                         "error": stderr,
                         "time": total_time,
@@ -226,6 +238,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     }
                 else:
                     result = {
+                        "input": inp.read_text(),
+                        "correct_output": output,
+                        "user_output": stdout, 
                         "success": 0,
                         "error": "",
                         "time": total_time,
@@ -234,6 +249,9 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
         
         except subprocess.TimeoutExpired:
             result = {
+                "input": inp.read_text(),
+                "correct_output": "",
+                "user_output": "",
                 "success": 2,
                 "error": "",
                 "time": -1,
@@ -293,7 +311,10 @@ def validate_answers(data: ValidateQuestionDTO):
 
     correct_subtasks = 0 
 
+
+    
     response = {
+        "user_code": data.file,
         "total_subtasks": len(subtasks),
         "correct_subtasks": correct_subtasks,
         "subtasks": [None for _ in range(len(subtasks))],
