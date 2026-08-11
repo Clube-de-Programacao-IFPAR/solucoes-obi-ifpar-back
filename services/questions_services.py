@@ -323,12 +323,18 @@ def validate_answers(data: ValidateQuestionDTO):
     }
     # data structure is:
     # response: {
+    #   "user_code": string, 
+    #   "total_subtasks": int,
+    #   "correct_subtasks": int 
     #   "subtasks": [
     #     { # subtask 0 indexed
+    #       "total_tests": int
+    #       "correct_tests": int 
     #       "tests": [ # also 0 indexed
     #         {
-    #          "total_tests": int
-    #          "correct_tests": int 
+    #         "input": string,
+    #         "correct_output": string,
+    #         "user_output": string,
     #         "success": int,
     #         "time": float,
     #         "memory": int
