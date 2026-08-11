@@ -356,7 +356,7 @@ def validate_answers(data: ValidateQuestionDTO):
                 command()
             else:
                 subprocess.call(command)
-        return {"error": compile_error}, 400
+        return {"error": compile_error}, 422
 
     for i, subtask in enumerate(subtasks):
         response["subtasks"][i] = validate_subtask(subtask, cmd)
