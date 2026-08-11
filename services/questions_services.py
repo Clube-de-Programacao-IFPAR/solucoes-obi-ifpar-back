@@ -130,6 +130,7 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
     # 4 -> RTE (Run Time Error) 
 
     for inp, out in tests:
+
         try:
             inp_file = inp.open()
             stime = time.perf_counter()
@@ -187,10 +188,13 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             inp_file.close()
 
+            code_input = inp.read_text()
+            expected_output = out.read_text().strip()
+
             if has_timeouted:
                 result = {
-                    "input": inp.read_text(),
-                    "correct_output": "",
+                    "input": code_input,
+                    "correct_output": expected_output,
                     "user_output": "",
                     "success": 2,
                     "error": "",
@@ -200,8 +204,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
 
             elif has_exceeded_max_memory:
                 result = {
-                    "input": inp.read_text(),
-                    "correct_output": "",
+                    "input": code_input,
+                    "correct_output": expected_output,
                     "user_output": "",
                     "success": 3,
                     "error": "",
@@ -210,16 +214,14 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                 }
 
             else:
-                # compare stdout with the output file
+                # compare stdout with the expected output file
 
-                output = out.read_text().strip()
-
-                if stderr == "" and stdout == output:
+                if stderr == "" and stdout == expected_output:
                     correct_tests += 1
 
                     result = {
-                        "input": inp.read_text(),
-                        "correct_output": output,
+                        "input": code_input,
+                        "correct_output": expected_output,
                         "user_output": stdout,
                         "success": 1,
                         "error": "",
@@ -228,8 +230,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     }
                 elif stderr != "":
                     result = {
-                        "input": inp.read_text(),
-                        "correct_output": "",
+                        "input": code_input,
+                        "correct_output": expected_output,
                         "user_output": "",
                         "success": 4,
                         "error": stderr,
@@ -238,8 +240,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
                     }
                 else:
                     result = {
-                        "input": inp.read_text(),
-                        "correct_output": output,
+                        "input": code_input,
+                        "correct_output": expected_output,
                         "user_output": stdout, 
                         "success": 0,
                         "error": "",
@@ -249,8 +251,8 @@ def validate_subtask(path: pathlib.Path, command: list[str]):
         
         except subprocess.TimeoutExpired:
             result = {
-                "input": inp.read_text(),
-                "correct_output": "",
+                "input": code_input,
+                "correct_output": expected_output,
                 "user_output": "",
                 "success": 2,
                 "error": "",
@@ -310,8 +312,6 @@ def validate_answers(data: ValidateQuestionDTO):
     ))
 
     correct_subtasks = 0 
-
-
     
     response = {
         "user_code": data.file,
