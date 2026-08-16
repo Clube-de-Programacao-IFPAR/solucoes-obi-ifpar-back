@@ -120,6 +120,8 @@ def execute_with_docker(
                         dst / file.name,
                     )
 
+        mount_path = str(tempdir.resolve().as_posix())
+
         subprocess.run(
             [
                 "docker",
@@ -131,7 +133,7 @@ def execute_with_docker(
                 "--cpus=1",
                 "--pids-limit=64",
                 "-v",
-                f"{tempdir.resolve()}:/workspace",
+                f"{mount_path}:/workspace",
                 DOCKER_IMAGE,
             ],
             check=True,
